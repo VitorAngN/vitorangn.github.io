@@ -1,14 +1,14 @@
-# 🌐 vitorangn.github.io
+# vitorangn.github.io
 
-Portfólio pessoal de **João Vitor Angelim Nogueira** — Desenvolvedor Back-End & Full-Stack.
+Portfólio pessoal de **João Vitor Angelim Nogueira** — estudante de Engenharia de Computação focado em **Back-end, Cloud e DevOps**.
 
-## 🚀 Stack
+## Stack
 
 - **HTML5** — Estrutura semântica e SEO otimizado
 - **CSS3** — Variáveis, animações, glassmorphism, responsivo
 - **JavaScript** — Partículas interativas, typing effect, scroll animations
 
-## ✨ Features
+## Features
 
 - 🌌 Tema Dark Premium (Deep Space Violet)
 - ✨ Background com partículas interativas que reagem ao mouse
@@ -20,7 +20,7 @@ Portfólio pessoal de **João Vitor Angelim Nogueira** — Desenvolvedor Back-En
 - 🔝 Botão voltar ao topo
 - ⏳ Loading screen com barra de progresso
 
-## 📂 Estrutura
+## Estrutura
 
 ```
 ├── index.html    # Página principal
@@ -29,7 +29,7 @@ Portfólio pessoal de **João Vitor Angelim Nogueira** — Desenvolvedor Back-En
 └── README.md     # Documentação
 ```
 
-## 📫 Contato
+## Contato
 
 - **LinkedIn:** [in/vitorangn](https://linkedin.com/in/vitorangn)
 - **GitHub:** [VitorAngN](https://github.com/VitorAngN)
@@ -38,5 +38,5 @@ Portfólio pessoal de **João Vitor Angelim Nogueira** — Desenvolvedor Back-En
 ---
 
 <p align="center">
-  Projetado & Desenvolvido com ❤️ por João Vitor Angelim Nogueira
+  Projetado & Desenvolvido por João Vitor Angelim Nogueira
 </p>

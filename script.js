@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================================
     // TYPING EFFECT
     // ============================================================
-    const roles = ['APIs Escaláveis', 'Clean Code', 'Arquitetura de Software', 'Java & Node.js', 'Resolução de Problemas', 'C++ & Go'];
+    const roles = ['APIs RESTful', 'Docker & CI/CD', 'Linux & AWS EC2', 'Node.js & TypeScript', 'Resolução de Problemas', 'Go & Java'];
     let roleIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
