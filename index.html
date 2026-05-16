@@ -3,648 +3,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="João Vitor Angelim Nogueira - Estudante de Engenharia de Computação focado em Back-end, Cloud e DevOps. Portfólio profissional.">
-    <meta name="keywords" content="Desenvolvedor Back-end, Cloud, DevOps, AWS, Docker, Linux, Node.js, TypeScript, Go, Java, Portfólio">
+    <meta name="description" content="Portfólio de João Vitor Angelim Nogueira, estudante de Engenharia de Computação focado em Back-end, Cloud e DevOps.">
     <meta name="author" content="João Vitor Angelim Nogueira">
     <meta property="og:title" content="João Vitor Angelim Nogueira | Back-end, Cloud & DevOps">
-    <meta property="og:description" content="Portfólio profissional - Estudante de Engenharia de Computação focado em Back-end, Cloud, Docker, Linux e CI/CD.">
+    <meta property="og:description" content="Projetos com APIs, Docker, Linux, GitHub Actions, AWS EC2, PostgreSQL e Prisma.">
     <meta property="og:type" content="website">
     <title>João Vitor Angelim Nogueira | Back-end, Cloud & DevOps</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='85' font-family='monospace' fill='%237c3aed'%3E%26lt;/%26gt;%3C/text%3E%3C/svg%3E">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
-        <div class="loader">
-            <div class="loader-logo">
-                <span class="logo-bracket">&lt;</span>
-                <span class="logo-text">VA</span>
-                <span class="logo-bracket">/&gt;</span>
-            </div>
-            <div class="loader-bar">
-                <div class="loader-progress"></div>
-            </div>
-            <p class="loader-text">Carregando portfólio...</p>
-        </div>
-    </div>
-
-    <!-- Cursor Glow Effect -->
-    <div class="cursor-glow" id="cursorGlow"></div>
-
-    <!-- Particle Background -->
-    <canvas id="particleCanvas"></canvas>
-
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="nav-logo">
-                <span class="logo-bracket">&lt;</span>
-                <span class="logo-text">VA</span>
-                <span class="logo-bracket">/&gt;</span>
-            </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#hero" class="nav-link active" data-section="hero">Início</a></li>
-                <li><a href="#about" class="nav-link" data-section="about">Sobre</a></li>
-                <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
-                <li><a href="#projects" class="nav-link" data-section="projects">Projetos</a></li>
-                <li><a href="#experience" class="nav-link" data-section="experience">Experiência</a></li>
-                <li><a href="#contact" class="nav-link" data-section="contact">Contato</a></li>
-            </ul>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
+    <header class="site-header">
+        <nav class="nav" aria-label="Navegacao principal">
+            <a class="brand" href="#home" aria-label="Ir para o inicio">VA</a>
+            <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
-        </div>
-    </nav>
+            <div class="nav-links" data-nav-links>
+                <a href="#sobre">Sobre</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#skills">Skills</a>
+                <a href="#trajetoria">Trajetória</a>
+                <a href="#contato">Contato</a>
+            </div>
+        </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-content">
-            <div class="hero-badge animate-on-scroll">
-                <span class="badge-dot"></span>
-                <span>Disponível para oportunidades</span>
-            </div>
-            <h1 class="hero-title animate-on-scroll">
-                <span class="hero-greeting">Olá, eu sou</span>
-                <span class="hero-name">
-                    <span class="name-word">João</span>
-                    <span class="name-word">Vitor</span>
-                </span>
-                <span class="hero-subtitle">Estudante de Engenharia de Computação | Back-end, Cloud & DevOps</span>
-                <span class="hero-role">
-                    <span class="role-static">Focado em</span>
-                    <span class="role-dynamic" id="typingText"></span>
-                    <span class="typing-cursor">|</span>
-                </span>
-            </h1>
-            <p class="hero-description animate-on-scroll">
-                Natural do <strong>Ceará</strong>, atualmente graduando em <strong>Engenharia da Computação</strong> pela UTFPR. 
-                Focado em <strong>Back-end, Cloud e DevOps</strong>, estudando o ciclo completo: APIs, bancos de dados, 
-                Linux, Docker, CI/CD e deploy validado em AWS.
-            </p>
-            <div class="hero-cta animate-on-scroll">
-                <a href="#projects" class="btn btn-primary">
-                    <span>Ver Projetos</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-                <a href="#contact" class="btn btn-outline">
-                    <span>Fale Comigo</span>
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="#contact" class="btn btn-ghost" id="downloadCV">
-                    <i class="fas fa-download"></i>
-                    <span>Currículo</span>
-                </a>
-            </div>
-            <div class="hero-stats animate-on-scroll">
-                <div class="stat-item">
-                    <span class="stat-number" data-target="7">0</span>
-                    <span class="stat-label">Repositórios</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="20">0</span><span class="stat-plus">+</span>
-                    <span class="stat-label">Tecnologias</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="3">0</span><span class="stat-plus">+</span>
-                    <span class="stat-label">Projetos Relevantes</span>
-                </div>
-            </div>
-        </div>
-        <div class="hero-visual animate-on-scroll">
-            <div class="code-window">
-                <div class="code-header">
-                    <div class="code-dots">
-                        <span class="dot red"></span>
-                        <span class="dot yellow"></span>
-                        <span class="dot green"></span>
-                    </div>
-                    <span class="code-title">developer.ts</span>
-                </div>
-                <div class="code-body">
-                    <pre><code><span class="code-keyword">interface</span> <span class="code-type">Engineer</span> {
-  <span class="code-prop">name</span>: <span class="code-string">"João Vitor"</span>;
-  <span class="code-prop">role</span>: <span class="code-string">"Back-end, Cloud & DevOps"</span>;
-  <span class="code-prop">location</span>: <span class="code-string">"Paraná, Brasil"</span>;
-  <span class="code-prop">stack</span>: <span class="code-type">string</span>[];
-  <span class="code-prop">passion</span>: <span class="code-string">"Building reliable systems"</span>;
-}
-
-<span class="code-keyword">const</span> <span class="code-var">vitor</span>: <span class="code-type">Engineer</span> = {
-  <span class="code-prop">name</span>: <span class="code-string">"João Vitor"</span>,
-  <span class="code-prop">role</span>: <span class="code-string">"Back-end, Cloud & DevOps"</span>,
-  <span class="code-prop">location</span>: <span class="code-string">"Paraná, Brasil"</span>,
-  <span class="code-prop">stack</span>: [
-    <span class="code-string">"AWS EC2"</span>, <span class="code-string">"Docker"</span>,
-    <span class="code-string">"Linux"</span>, <span class="code-string">"Node.js"</span>,
-    <span class="code-string">"TypeScript"</span>, <span class="code-string">"Go"</span>
-  ],
-  <span class="code-prop">passion</span>: <span class="code-string">"Learning production-ready delivery"</span>
-};</code></pre>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="mouse-wheel"></div>
-            </div>
-            <span>Role para explorar</span>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section about" id="about">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">&lt;sobre&gt;</span>
-                <h2 class="section-title">Quem sou eu</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="about-grid">
-                <div class="about-text animate-on-scroll">
-                    <p class="about-intro">
-                        Natural do <span class="highlight">Ceará</span> e atualmente graduando em 
-                        <span class="highlight">Engenharia da Computação</span> pela UTFPR, 
-                        apaixonado tanto pelo software de alto nível quanto pelo hardware "debaixo dos panos".
-                    </p>
-                    <p>
-                        Tenho um perfil focado no <strong>ciclo completo do software</strong>. Gosto de entender 
-                        a <span class="highlight">base estrutural</span> (C++, Arquitetura, SO) e aplicar em 
-                        projetos modernos usando <strong>Node.js, Go e AWS</strong>.
-                    </p>
-                    <p>
-                        Atualmente aprofundando em <span class="highlight">Docker, Linux, GitHub Actions, AWS EC2, Bash</span> 
-                        e fundamentos de <strong>Cloud/DevOps</strong>.
-                    </p>
-                    <p>
-                        Tenho interesse especial por entender o caminho completo de uma aplicação: do código e arquitetura 
-                        até containerização, deploy, logs e troubleshooting em ambiente Linux.
-                    </p>
-                    <div class="about-highlights">
-                        <div class="highlight-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span>Eng. Computação — UTFPR</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Paraná, Brasil (natural do CE)</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-language"></i>
-                            <span>Inglês Avançado (C1)</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-code"></i>
-                            <span>Clean Code Enthusiast</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-cards animate-on-scroll">
-                    <div class="info-card">
-                        <div class="card-icon">
-                            <i class="fas fa-server"></i>
-                        </div>
-                        <h3>Back-End & APIs</h3>
-                        <p>Desenvolvimento com Node.js, TypeScript, Go e Java. Foco em APIs REST, autenticação, regras de negócio e bancos relacionais.</p>
-                    </div>
-                    <div class="info-card">
-                        <div class="card-icon">
-                            <i class="fas fa-cloud"></i>
-                        </div>
-                        <h3>Cloud & DevOps</h3>
-                        <p>Experiência prática com AWS EC2, Docker/Docker Compose, Linux e pipelines de CI com GitHub Actions.</p>
-                    </div>
-                    <div class="info-card">
-                        <div class="card-icon">
-                            <i class="fas fa-microchip"></i>
-                        </div>
-                        <h3>Low-Level</h3>
-                        <p>C/C++, emulação de CPU, redes e sistemas operacionais. Hardware hands-on.</p>
-                    </div>
-                    <div class="info-card">
-                        <div class="card-icon">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h3>Banco de Dados</h3>
-                        <p>Modelagem relacional com MySQL, PostgreSQL e ORMs como Prisma.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="section skills" id="skills">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">&lt;skills&gt;</span>
-                <h2 class="section-title">Tecnologias & Ferramentas</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="skills-grid animate-on-scroll">
-                <!-- Languages -->
-                <div class="skill-category">
-                    <h3 class="category-title">
-                        <i class="fas fa-code"></i>
-                        Linguagens
-                    </h3>
-                    <div class="skill-tags">
-                        <div class="skill-tag" data-level="90">
-                            <i class="fab fa-java"></i>
-                            <span>Java</span>
-                            <div class="skill-bar"><div class="skill-fill" style="--fill-width: 90%"></div></div>
-                        </div>
-                        <div class="skill-tag" data-level="85">
-                            <i class="fab fa-js-square"></i>
-                            <span>JavaScript</span>
-                            <div class="skill-bar"><div class="skill-fill" style="--fill-width: 85%"></div></div>
-                        </div>
-                        <div class="skill-tag" data-level="85">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TS" width="16">
-                            <span>TypeScript</span>
-                            <div class="skill-bar"><div class="skill-fill" style="--fill-width: 85%"></div></div>
-                        </div>
-                        <div class="skill-tag" data-level="70">
-                            <i class="fab fa-python"></i>
-                            <span>Python</span>
-                            <div class="skill-bar"><div class="skill-fill" style="--fill-width: 70%"></div></div>
-                        </div>
-                        <div class="skill-tag" data-level="80">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" width="16">
-                            <span>C/C++</span>
-                            <div class="skill-bar"><div class="skill-fill" style="--fill-width: 80%"></div></div>
-                        </div>
-                        <div class="skill-tag" data-level="70">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" alt="Go" width="16">
-                            <span>Go</span>
-                            <div class="skill-bar"><div class="skill-fill" style="--fill-width: 70%"></div></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Frameworks -->
-                <div class="skill-category">
-                    <h3 class="category-title">
-                        <i class="fas fa-layer-group"></i>
-                        Frameworks & Libs
-                    </h3>
-                    <div class="skill-tags">
-                        <div class="skill-tag">
-                            <i class="fab fa-react"></i>
-                            <span>React</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fab fa-angular"></i>
-                            <span>Angular</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fab fa-node-js"></i>
-                            <span>Node.js</span>
-                        </div>
-                        <div class="skill-tag">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express" width="16">
-                            <span>Express</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Database & Tools -->
-                <div class="skill-category">
-                    <h3 class="category-title">
-                        <i class="fas fa-database"></i>
-                        Banco de Dados, Cloud & DevOps
-                    </h3>
-                    <div class="skill-tags">
-                        <div class="skill-tag">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" width="16">
-                            <span>MySQL</span>
-                        </div>
-                        <div class="skill-tag">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="Postgres" width="16">
-                            <span>PostgreSQL</span>
-                        </div>
-                        <div class="skill-tag">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" width="16">
-                            <span>Docker</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub Actions</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fab fa-aws"></i>
-                            <span>AWS EC2</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fab fa-git-alt"></i>
-                            <span>Git/GitHub</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fab fa-linux"></i>
-                            <span>Linux</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Concepts -->
-                <div class="skill-category">
-                    <h3 class="category-title">
-                        <i class="fas fa-brain"></i>
-                        Conhecimentos
-                    </h3>
-                    <div class="skill-tags concept-tags">
-                        <div class="skill-tag concept">
-                            <span>POO</span>
-                        </div>
-                        <div class="skill-tag concept">
-                            <span>APIs RESTful</span>
-                        </div>
-                        <div class="skill-tag concept">
-                            <span>Clean Code</span>
-                        </div>
-                        <div class="skill-tag concept">
-                            <span>Design Patterns</span>
-                        </div>
-                        <div class="skill-tag concept">
-                            <span>Estruturas de Dados</span>
-                        </div>
-                        <div class="skill-tag concept">
-                            <span>Algoritmos</span>
-                        </div>
-                        <div class="skill-tag concept">
-                            <span>Eng. de Software</span>
-                        </div>
-                        <div class="skill-tag concept">
-                            <span>Metodologias Ágeis</span>
-                        </div>
-                        <div class="skill-tag concept">
-                            <span>JWT / Auth</span>
-                        </div>
-                        <div class="skill-tag concept">
-                            <span>Data Modeling</span>
-                        </div>
-                        <div class="skill-tag concept">
-                            <span>Redes</span>
-                        </div>
-                        <div class="skill-tag concept">
-                            <span>Sist. Operacionais</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="section projects" id="projects">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">&lt;projetos&gt;</span>
-                <h2 class="section-title">Projetos em Destaque</h2>
-                <div class="section-line"></div>
-                <p class="section-subtitle">Acredito no aprendizado forjado por projetos complexos mais do que dezenas de aplicações rasas.</p>
-            </div>
-            
-            <!-- Featured Project -->
-            <div class="project-featured animate-on-scroll">
-                <div class="project-featured-content">
-                    <div class="project-label">
-                        <i class="fas fa-star"></i>
-                        Projeto Principal
-                    </div>
-                    <h3 class="project-title">Helpdesk Corporativo & Gestão de Chamados</h3>
-                    <div class="project-description-card">
-                        <p>
-                            Sistema corporativo de HelpDesk focado no fluxo de suporte técnico. 
-                            <strong>Arquitetura conteinerizada (Docker Compose)</strong> rodando em ambiente 
-                            Linux na <strong>AWS EC2</strong>, com roteamento de tráfego via <strong>Nginx</strong>.
-                        </p>
-                        <p>
-                            O backend utiliza <strong>Node.js, Express e Socket.io</strong> para chats em tempo 
-                            real de baixa latência, enquanto a persistência e modelagem são feitas em <strong>MySQL</strong> com Prisma ORM.
-                        </p>
-                    </div>
-                    <div class="project-tech">
-                        <span class="tech-pill">AWS EC2</span>
-                        <span class="tech-pill">Docker</span>
-                        <span class="tech-pill">Nginx</span>
-                        <span class="tech-pill">Node.js</span>
-                        <span class="tech-pill">Socket.io</span>
-                        <span class="tech-pill">MySQL</span>
-                        <span class="tech-pill">JWT</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/VitorAngN/helpdesk-system" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i>
-                            <span>Código Fonte</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="project-featured-visual">
-                    <img src="img/helpdesk-dashboard.png" alt="Helpdesk Dashboard na AWS" class="project-image">
-                </div>
-            </div>
-
-            <!-- Other Projects Grid -->
-            <div class="projects-grid">
-                <div class="project-card animate-on-scroll">
-                    <div class="project-card-header">
-                        <div class="project-card-icon">
-                            <i class="fas fa-file-invoice-dollar"></i>
-                        </div>
-                        <div class="project-card-links">
-                            <a href="https://github.com/VitorAngN/invoice-microservices-go" target="_blank" aria-label="GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <h3 class="project-card-title">Faturamento em Microsserviços</h3>
-                    <p class="project-card-desc">
-                        Sistema de emissão de notas fiscais com microserviços em Go, frontend Angular e 
-                        comunicação resiliente entre serviços. Docker Compose para orquestração.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-pill small">Angular</span>
-                        <span class="tech-pill small">Go</span>
-                        <span class="tech-pill small">PostgreSQL</span>
-                        <span class="tech-pill small">Docker</span>
-                    </div>
-                </div>
-
-                <div class="project-card animate-on-scroll">
-                    <div class="project-card-header">
-                        <div class="project-card-icon">
-                            <i class="fas fa-microchip"></i>
-                        </div>
-                        <div class="project-card-links">
-                            <a href="https://github.com/VitorAngN/oldCPUEmulator" target="_blank" aria-label="GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <h3 class="project-card-title">C++ CHIP-8 Emulator</h3>
-                    <img src="img/cpu-emulator.png" alt="Emulador CPU" class="project-card-image">
-                    <p class="project-card-desc">
-                        Emulador de CPU desenvolvido do zero em C++ (Fetch, Decode, Execute). Manipulação 
-                        bit-a-bit e uso intensivo de memória RAM simulada para rodar ROMs clássicas no terminal.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-pill small">C++</span>
-                        <span class="tech-pill small">Arquitetura</span>
-                        <span class="tech-pill small">Low-Level</span>
-                    </div>
-                </div>
-
-                <div class="project-card animate-on-scroll">
-                    <div class="project-card-header">
-                        <div class="project-card-icon">
-                            <i class="fas fa-map-location-dot"></i>
-                        </div>
-                        <div class="project-card-links">
-                            <a href="https://github.com/VitorAngN/urbanShield" target="_blank" aria-label="GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <h3 class="project-card-title">UrbanShield — Segurança Pública</h3>
-                    <p class="project-card-desc">
-                        Dashboard interativo para monitoramento urbano em tempo real, com cálculo de proximidade, 
-                        integração com Google Maps e OSRM para roteamento de viaturas.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-pill small">React</span>
-                        <span class="tech-pill small">TypeScript</span>
-                        <span class="tech-pill small">Google Maps</span>
-                        <span class="tech-pill small">OSRM</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience & Education Section -->
-    <section class="section experience" id="experience">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">&lt;trajetória&gt;</span>
-                <h2 class="section-title">Experiência & Formação</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item animate-on-scroll">
-                    <div class="timeline-marker education-marker">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-badge">Formação</div>
-                        <h3>Bacharelado em Engenharia de Computação</h3>
-                        <h4>Universidade Tecnológica Federal do Paraná (UTFPR)</h4>
-                        <span class="timeline-date">
-                            <i class="fas fa-calendar-alt"></i>
-                            Ago 2022 — Jun 2027 (em andamento)
-                        </span>
-                        <p>
-                            Formação sólida em algoritmos, estruturas de dados, POO, arquitetura de 
-                            computadores, redes e sistemas operacionais. Projetos práticos integrando 
-                            hardware e software.
-                        </p>
-                    </div>
-                </div>
-                <div class="timeline-item animate-on-scroll">
-                    <div class="timeline-marker work-marker">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-badge work">Experiência</div>
-                        <h3>Técnico de TI</h3>
-                        <h4>Erivelton Emplacamentos</h4>
-                        <span class="timeline-date">
-                            <i class="fas fa-calendar-alt"></i>
-                            Jul 2020 — Jan 2021
-                        </span>
-                        <p>
-                            Suporte técnico em ambiente corporativo. Troubleshooting de hardware e software, 
-                            manutenção de equipamentos e infraestrutura de rede. Experiência hands-on com 
-                            resolução de problemas em TI.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="section contact" id="contact">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">&lt;contato&gt;</span>
-                <h2 class="section-title">Vamos Conversar?</h2>
-                <div class="section-line"></div>
-                <p class="section-subtitle">Estou sempre aberto a novas oportunidades e conexões. Sinta-se à vontade para entrar em contato!</p>
-            </div>
-            <div class="contact-grid animate-on-scroll">
-                <a href="mailto:victornogueira1130@gmail.com" class="contact-card" id="contact-email">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3>Email</h3>
-                    <p>victornogueira1130@gmail.com</p>
-                    <span class="contact-action">Enviar email <i class="fas fa-arrow-right"></i></span>
-                </a>
-                <a href="https://www.linkedin.com/in/vitorangn/" target="_blank" class="contact-card" id="contact-linkedin">
-                    <div class="contact-icon linkedin">
-                        <i class="fab fa-linkedin-in"></i>
-                    </div>
-                    <h3>LinkedIn</h3>
-                    <p>in/vitorangn</p>
-                    <span class="contact-action">Ver perfil <i class="fas fa-arrow-right"></i></span>
-                </a>
-                <a href="https://github.com/VitorAngN" target="_blank" class="contact-card" id="contact-github">
-                    <div class="contact-icon github">
-                        <i class="fab fa-github"></i>
-                    </div>
-                    <h3>GitHub</h3>
-                    <p>VitorAngN</p>
-                    <span class="contact-action">Ver repositórios <i class="fas fa-arrow-right"></i></span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <span class="logo-bracket">&lt;</span>
-                    <span class="logo-text">VA</span>
-                    <span class="logo-bracket">/&gt;</span>
-                </div>
-                <p class="footer-text">
-                    Projetado & Desenvolvido com <span class="heart">❤️</span> por João Vitor Angelim Nogueira
+    <main id="home">
+        <section class="hero section-shell">
+            <div class="hero-copy">
+                <p class="eyebrow">Disponível para estágio ou júnior</p>
+                <h1>
+                    <span>João Vitor</span>
+                    <span>Angelim</span>
+                    <span>Nogueira</span>
+                </h1>
+                <p class="hero-lead">
+                    Estudante de Engenharia de Computação na UTFPR, com foco em Back-end,
+                    Cloud e DevOps. Construo APIs, organizo dados e estudo o caminho completo
+                    entre código, container, CI e ambiente Linux.
                 </p>
-                <div class="footer-social">
-                    <a href="https://github.com/VitorAngN" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/vitorangn/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="mailto:victornogueira1130@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <div class="hero-actions" aria-label="Links principais">
+                    <a class="button primary" href="#projetos">Ver projetos</a>
+                    <a class="button" href="https://github.com/VitorAngN" target="_blank" rel="noreferrer">GitHub</a>
+                    <a class="button" href="https://linkedin.com/in/vitorangn" target="_blank" rel="noreferrer">LinkedIn</a>
                 </div>
-                <p class="footer-copyright">© 2026 — Todos os direitos reservados.</p>
             </div>
-        </div>
-    </footer>
 
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+            <aside class="evidence-panel" aria-label="Resumo tecnico">
+                <p class="panel-label">Foco atual</p>
+                <ul>
+                    <li>APIs REST com Node.js, TypeScript, Go e Java.</li>
+                    <li>PostgreSQL/MySQL, Prisma, transações e modelagem relacional.</li>
+                    <li>Docker, Linux, GitHub Actions e deploy validado em AWS EC2.</li>
+                    <li>Inglês avançado (C1) e Espanhol intermediário (B1).</li>
+                </ul>
+            </aside>
+        </section>
+
+        <section class="signal-band" aria-label="Resumo de stack">
+            <div class="signal-item">
+                <span>Back-end</span>
+                <strong>Node.js, TypeScript, Go, Java</strong>
+            </div>
+            <div class="signal-item">
+                <span>Dados</span>
+                <strong>PostgreSQL, MySQL, Prisma</strong>
+            </div>
+            <div class="signal-item">
+                <span>Operacao</span>
+                <strong>Docker, Linux, CI/CD, AWS EC2</strong>
+            </div>
+        </section>
+
+        <section class="section-shell split-section" id="sobre">
+            <div>
+                <p class="section-kicker">Sobre</p>
+                <h2>Perfil de desenvolvimento com visão de operação.</h2>
+            </div>
+            <div class="body-text">
+                <p>
+                    Minha base vem da Engenharia de Computação e de uma vivência anterior como Técnico de TI.
+                    Isso me ajuda a olhar para software alem da tela: processo, rede, servidor, logs, deploy,
+                    manutenção e impacto para quem usa.
+                </p>
+                <p>
+                    Hoje meu foco é conseguir uma oportunidade de entrada em Back-end, Cloud ou DevOps,
+                    mostrando que consigo aprender rápido, documentar bem e transformar problemas reais em
+                    sistemas organizados.
+                </p>
+            </div>
+        </section>
+
+        <section class="section-shell" id="projetos">
+            <div class="section-heading">
+                <p class="section-kicker">Projetos</p>
+                <h2>Projetos em destaque</h2>
+                <p>
+                    A ordem aqui é intencional: primeiro o projeto mais forte para vaga, depois um produto
+                    novo que organiza minha própria rotina de candidaturas.
+                </p>
+            </div>
+
+            <article class="project-feature primary-project">
+                <div class="project-content">
+                    <p class="project-tag">Projeto principal</p>
+                    <h3>Helpdesk Corporativo</h3>
+                    <p>
+                        Sistema de gestão de chamados com API REST, autenticação, permissões por perfil,
+                        chat em tempo real, anexos, métricas de atendimento e validação prática de deploy.
+                    </p>
+                    <ul class="project-points">
+                        <li>Node.js/Express, TypeScript, MySQL, Prisma, JWT/Bcrypt e RBAC.</li>
+                        <li>Socket.io, upload de anexos, logs de auditoria e métricas SLA/CSAT.</li>
+                        <li>Docker/Docker Compose, GitHub Actions e ambiente Linux em AWS EC2.</li>
+                    </ul>
+                    <div class="tag-row" aria-label="Tecnologias do Helpdesk">
+                        <span>Node.js</span>
+                        <span>TypeScript</span>
+                        <span>MySQL</span>
+                        <span>Docker</span>
+                        <span>AWS EC2</span>
+                        <span>CI/CD</span>
+                    </div>
+                    <a class="text-link" href="https://github.com/VitorAngN/helpdesk-system" target="_blank" rel="noreferrer">Abrir repositório</a>
+                </div>
+                <figure class="project-media">
+                    <img src="img/helpdesk-dashboard.png" alt="Dashboard do sistema Helpdesk com cards de métricas" loading="lazy">
+                </figure>
+            </article>
+
+            <article class="project-feature secondary-project">
+                <div class="project-content">
+                    <p class="project-tag">Produto de apoio a carreira</p>
+                    <h3>JobOps</h3>
+                    <p>
+                        Aplicação para registrar vagas, status, currículos usados, follow-ups e métricas de retorno.
+                        Nasceu de uma dor real: aplicar para muitas vagas sem perder controle do processo.
+                    </p>
+                    <ul class="project-points">
+                        <li>CRUD de candidaturas, empresas e versões de currículo.</li>
+                        <li>Dashboard com taxa de resposta, entrevistas, filtros, paginação e follow-ups.</li>
+                        <li>API com Express, PostgreSQL, Prisma, Docker, exportação CSV/Excel e testes.</li>
+                    </ul>
+                    <div class="tag-row" aria-label="Tecnologias do JobOps">
+                        <span>React</span>
+                        <span>TypeScript</span>
+                        <span>Express</span>
+                        <span>PostgreSQL</span>
+                        <span>Prisma</span>
+                        <span>Docker</span>
+                    </div>
+                    <a class="text-link" href="https://github.com/VitorAngN/jobops" target="_blank" rel="noreferrer">Abrir repositório</a>
+                </div>
+                <figure class="project-media stacked-media">
+                    <img src="img/jobops-dashboard.png" alt="Tela principal do JobOps com dashboard de candidaturas" loading="lazy">
+                    <img src="img/jobops-detail.png" alt="Tela de detalhes de uma candidatura no JobOps" loading="lazy">
+                </figure>
+            </article>
+
+            <div class="project-grid" aria-label="Outros projetos">
+                <article class="project-card">
+                    <h3>Faturamento em Microsservicos</h3>
+                    <p>
+                        Microsserviços em Go para estoque e faturamento, com PostgreSQL, Docker Compose,
+                        retry automático, fallback HTTP 503, transações, rollback e lock atômico.
+                    </p>
+                    <div class="tag-row">
+                        <span>Go</span>
+                        <span>PostgreSQL</span>
+                        <span>Docker Compose</span>
+                        <span>Angular</span>
+                    </div>
+                    <a class="text-link" href="https://github.com/VitorAngN/invoice-microservices-go" target="_blank" rel="noreferrer">Abrir repositório</a>
+                </article>
+
+                <article class="project-card">
+                    <h3>CPU Emulator CHIP-8</h3>
+                    <p>
+                        Emulador escrito em C++ para consolidar arquitetura de computadores: ciclo
+                        Fetch/Decode/Execute, registradores, timers, memória simulada e Win32 API.
+                    </p>
+                    <figure class="card-image">
+                        <img src="img/cpu-emulator.png" alt="CPU Emulator rodando no terminal" loading="lazy">
+                    </figure>
+                    <div class="tag-row">
+                        <span>C++</span>
+                        <span>Win32 API</span>
+                        <span>Arquitetura</span>
+                    </div>
+                    <a class="text-link" href="https://github.com/VitorAngN/oldCPUEmulator" target="_blank" rel="noreferrer">Abrir repositório</a>
+                </article>
+
+                <article class="project-card">
+                    <h3>Plataforma de Segurança Pública</h3>
+                    <p>
+                        Dashboard interativo com mapa, cálculo de proximidade via Haversine, integração com
+                        Google Maps e OSRM para visualização de ocorrências, rotas e despacho.
+                    </p>
+                    <div class="tag-row">
+                        <span>React</span>
+                        <span>TypeScript</span>
+                        <span>Maps API</span>
+                        <span>OSRM</span>
+                    </div>
+                    <a class="text-link" href="https://github.com/VitorAngN/urbanShield" target="_blank" rel="noreferrer">Abrir repositório</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-shell" id="skills">
+            <div class="section-heading compact">
+                <p class="section-kicker">Skills</p>
+                <h2>Stack organizada por uso real</h2>
+            </div>
+
+            <div class="skills-grid">
+                <section class="skill-block">
+                    <h3>Back-end & APIs</h3>
+                    <p>Node.js, TypeScript, Express, Java, Go, RESTful APIs, JWT, Bcrypt, Postman.</p>
+                </section>
+                <section class="skill-block">
+                    <h3>Dados</h3>
+                    <p>PostgreSQL, MySQL, Prisma, modelagem relacional, transações ACID, rollback e lock atômico.</p>
+                </section>
+                <section class="skill-block">
+                    <h3>Infraestrutura</h3>
+                    <p>Docker, Docker Compose, Linux, Bash, GitHub Actions, AWS EC2 e Git/GitHub.</p>
+                </section>
+                <section class="skill-block">
+                    <h3>Base acadêmica</h3>
+                    <p>POO, Estruturas de Dados, Sistemas Operacionais, Redes, Clean Architecture e documentação técnica.</p>
+                </section>
+            </div>
+        </section>
+
+        <section class="section-shell timeline" id="trajetoria">
+            <div class="section-heading compact">
+                <p class="section-kicker">Trajetória</p>
+                <h2>Formação e experiência</h2>
+            </div>
+
+            <div class="timeline-list">
+                <article class="timeline-item">
+                    <span class="timeline-date">2022 - 2027</span>
+                    <div>
+                        <h3>Bacharelado em Engenharia de Computação</h3>
+                        <p>Universidade Tecnológica Federal do Paraná (UTFPR), Cornélio Procópio/PR.</p>
+                    </div>
+                </article>
+                <article class="timeline-item">
+                    <span class="timeline-date">2020 - 2021</span>
+                    <div>
+                        <h3>Técnico de TI</h3>
+                        <p>Atuei com troubleshooting, suporte a usuários, redes, hardware e manutenção preventiva em ambiente corporativo.</p>
+                    </div>
+                </article>
+                <article class="timeline-item">
+                    <span class="timeline-date">2019 - 2021</span>
+                    <div>
+                        <h3>Técnico em Informática</h3>
+                        <p>EEEP Venceslau Vieira Batista, com base em programacao, suporte tecnico e fundamentos de sistemas.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contato">
+            <div class="contact-card">
+                <p class="section-kicker">Contato</p>
+                    <h2>Vamos conversar?</h2>
+                <p>
+                    Estou aberto a oportunidades de estágio ou júnior em Back-end, Cloud e DevOps.
+                    Também gosto de trocar ideia sobre projetos, arquitetura e carreira.
+                </p>
+                <div class="contact-actions">
+                    <a class="button primary" href="mailto:victornogueira1130@gmail.com">Enviar email</a>
+                    <a class="button" href="https://linkedin.com/in/vitorangn" target="_blank" rel="noreferrer">LinkedIn</a>
+                    <a class="button" href="https://github.com/VitorAngN" target="_blank" rel="noreferrer">GitHub</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Projetado e desenvolvido por João Vitor Angelim Nogueira.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>

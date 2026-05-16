@@ -1,42 +1,43 @@
 # vitorangn.github.io
 
-Portfólio pessoal de **João Vitor Angelim Nogueira** — estudante de Engenharia de Computação focado em **Back-end, Cloud e DevOps**.
+Portfólio pessoal de **João Vitor Angelim Nogueira**, estudante de Engenharia de Computação na UTFPR com foco em **Back-end, Cloud e DevOps**.
 
-## Stack
+O layout foi pensado para parecer mais direto e profissional: menos efeito visual gratuito, mais evidencia de projeto, stack e decisao tecnica.
 
-- **HTML5** — Estrutura semântica e SEO otimizado
-- **CSS3** — Variáveis, animações, glassmorphism, responsivo
-- **JavaScript** — Partículas interativas, typing effect, scroll animations
+## Projetos em destaque
 
-## Features
+- **Helpdesk Corporativo**: projeto principal, com Node.js, TypeScript, MySQL, Docker, GitHub Actions, Socket.io, RBAC e deploy validado em AWS EC2.
+- **JobOps**: plataforma para rastrear candidaturas, empresas, currículos usados, follow-ups e métricas de retorno.
+- **Faturamento em Microsserviços**: serviços em Go com PostgreSQL, Docker Compose, retry, fallback e transações.
+- **CPU Emulator CHIP-8**: emulador em C++ para fundamentos de arquitetura de computadores.
 
-- 🌌 Tema Dark Premium (Deep Space Violet)
-- ✨ Background com partículas interativas que reagem ao mouse
-- ⌨️ Efeito de digitação animado
-- 🖥️ Code window 3D com parallax
-- 📱 100% responsivo (desktop, tablet, mobile)
-- 🎭 Animações on-scroll suaves
-- 🔢 Contadores animados
-- 🔝 Botão voltar ao topo
-- ⏳ Loading screen com barra de progresso
+## Stack do portfolio
+
+- HTML semantico.
+- CSS responsivo com layout em grid.
+- JavaScript simples para menu mobile, link ativo e animacao discreta de entrada.
 
 ## Estrutura
 
+```text
+.
+├── index.html
+├── style.css
+├── script.js
+├── img/
+│   ├── helpdesk-dashboard.png
+│   ├── jobops-dashboard.png
+│   ├── jobops-detail.png
+│   └── cpu-emulator.png
+└── README.md
 ```
-├── index.html    # Página principal
-├── style.css     # Estilos e animações
-├── script.js     # Lógica e interatividade
-└── README.md     # Documentação
+
+## Rodando localmente
+
+Como é um site estático, basta abrir `index.html` no navegador.
+
+Se preferir servir localmente:
+
+```bash
+npx serve .
 ```
-
-## Contato
-
-- **LinkedIn:** [in/vitorangn](https://linkedin.com/in/vitorangn)
-- **GitHub:** [VitorAngN](https://github.com/VitorAngN)
-- **Email:** victornogueira1130@gmail.com
-
----
-
-<p align="center">
-  Projetado & Desenvolvido por João Vitor Angelim Nogueira
-</p>
