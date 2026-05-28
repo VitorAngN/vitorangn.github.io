@@ -7,7 +7,7 @@ Portfólio pessoal de **João Vitor Angelim Nogueira**, estudante de Engenharia 
 O site mantém uma identidade tech/dark, com roxo e azul como acentos, mas agora organiza melhor os projetos principais:
 
 - **Helpdesk Corporativo** continua como projeto principal.
-- **JobOps** entra como projeto de produto, mostrando uma dor real transformada em software.
+- **JobOps** entra como projeto pessoal de organização de candidaturas.
 - Os demais projetos ficam como evidência de profundidade técnica.
 
 ## Stack
