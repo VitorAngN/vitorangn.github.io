@@ -2,31 +2,20 @@
 
 Portfólio pessoal de **João Vitor Angelim Nogueira**, estudante de Engenharia de Computação focado em **Back-end, Cloud e DevOps**.
 
-## Ideia visual
+## Visual
 
-O site mantém uma identidade tech/dark, com roxo e azul como acentos, mas agora organiza melhor os projetos principais:
-
-- **Helpdesk Corporativo** continua como projeto principal.
-- **JobOps** entra como projeto pessoal de organização de candidaturas.
-- Os demais projetos ficam como evidência de profundidade técnica.
+Site estático em HTML e CSS puros, com visual claro e padrão de mercado. O tema escuro é aplicado automaticamente quando o navegador ou o sistema está no modo escuro (`prefers-color-scheme`). Cada projeto principal tem a própria página e a documentação da API publicadas no GitHub Pages.
 
 ## Stack
 
-- **HTML5** para estrutura semântica.
-- **CSS3** com variáveis, responsividade e animações.
-- **JavaScript** para partículas, menu, typing effect, scroll e contadores.
+- HTML5 semântico
+- CSS3 com variáveis e tema claro/escuro automático
 
 ## Estrutura
 
-```text
+```
 ├── index.html
-├── style.css
-├── script.js
 ├── img/
-│   ├── helpdesk-dashboard.png
-│   ├── jobops-dashboard.png
-│   ├── jobops-detail.png
-│   └── cpu-emulator.png
 └── README.md
 ```
 

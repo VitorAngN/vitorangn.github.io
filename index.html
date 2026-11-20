@@ -1,193 +1,169 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de João Vitor Angelim Nogueira, estudante de Engenharia de Computação focado em Back-end e infraestrutura de apoio.">
-    <meta name="author" content="João Vitor Angelim Nogueira">
-    <meta property="og:title" content="João Vitor Angelim Nogueira | Back-end & Infra de apoio">
-    <meta property="og:description" content="Projetos de back-end com Docker, Linux, CI e deploy validado em AWS EC2.">
-    <meta property="og:type" content="website">
-    <title>João Vitor Angelim Nogueira | Portfolio</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='28' fill='%23090909'/%3E%3Ctext x='22' y='74' font-size='42' font-family='Arial' font-weight='700' fill='white'%3EVA%3C/text%3E%3C/svg%3E">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=b386df9">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>João Vitor Angelim Nogueira — Desenvolvedor Back-end</title>
+<meta name="description" content="Portfólio de João Vitor Angelim Nogueira: estudante de Engenharia de Computação (UTFPR) com foco em back-end e APIs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { color-scheme: light dark; --bg:#ffffff; --soft:#f6f8fb; --card:#ffffff; --line:#e5e9f0; --txt:#1f2937; --title:#111827; --muted:#6b7280; --acc:#1e3a5f; --link:#2563eb; --chip:#e8eef7; --code:#f1f4f9; --shadow:0 4px 16px rgba(16,24,40,.06); }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0f1115; --soft:#151922; --card:#1a1f29; --line:#2a313d; --txt:#e5e7eb; --title:#f3f4f6; --muted:#9ca3af; --acc:#3b6ea8; --link:#7aa7ff; --chip:#1f2a3d; --code:#232a36; --shadow:0 4px 16px rgba(0,0,0,.35); }
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--txt); line-height:1.6; }
+  a { color:var(--link); text-decoration:none; } a:hover { text-decoration:underline; }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 24px; }
+  nav { border-bottom:1px solid var(--line); background:var(--bg); position:sticky; top:0; z-index:10; }
+  nav .wrap { display:flex; align-items:center; justify-content:space-between; height:64px; gap:16px; }
+  nav .logo { font-weight:700; color:var(--title); }
+  nav .links a { color:var(--muted); margin-left:24px; font-weight:500; font-size:15px; }
+  header { padding:72px 0 56px; background:var(--soft); }
+  .eyebrow { display:inline-block; background:var(--chip); color:var(--title); font-size:13px; font-weight:600; padding:6px 12px; border-radius:999px; }
+  h1 { font-size:clamp(32px,5vw,46px); margin:16px 0 12px; line-height:1.15; color:var(--title); }
+  .lead { font-size:18px; color:var(--muted); max-width:720px; }
+  .btns { display:flex; gap:12px; flex-wrap:wrap; margin-top:28px; }
+  .btn { padding:12px 20px; border-radius:12px; border:1px solid var(--line); background:var(--card); color:var(--txt); font-weight:600; box-shadow:0 1px 2px rgba(16,24,40,.06); }
+  .btn.primary { background:var(--acc); border-color:var(--acc); color:#fff; }
+  .btn:hover { text-decoration:none; filter:brightness(1.08); }
+  section { padding:64px 0; }
+  section.alt { background:var(--soft); }
+  h2 { font-size:28px; margin:0 0 24px; color:var(--title); }
+  .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; }
+  .stat, .card, figure { background:var(--card); border:1px solid var(--line); border-radius:20px; box-shadow:var(--shadow); }
+  .stat { padding:24px; }
+  .stat b { display:block; font-size:34px; color:var(--title); }
+  .stat span { color:var(--muted); font-size:15px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
+  .card { padding:24px; }
+  .card h3 { margin:0 0 8px; font-size:18px; color:var(--title); }
+  .card p { margin:0; color:var(--muted); font-size:15px; }
+  code { background:var(--code); padding:2px 6px; border-radius:6px; font-size:14px; }
+  .tags { display:flex; flex-wrap:wrap; gap:10px; }
+  .tag { background:var(--card); border:1px solid var(--line); border-radius:999px; padding:8px 14px; font-size:14px; font-weight:500; }
+  .shots { display:grid; grid-template-columns:repeat(auto-fit,minmax(420px,1fr)); gap:20px; }
+  figure { margin:0; overflow:hidden; }
+  figure img { width:100%; display:block; aspect-ratio:16/10; object-fit:cover; object-position:top; }
+  figcaption { padding:12px 16px; color:var(--muted); font-size:14px; font-weight:500; }
+  pre { background:#0f172a; color:#e2e8f0; border:1px solid var(--line); border-radius:16px; padding:20px; overflow:auto; font-size:14px; }
+  footer { padding:32px 0 48px; color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+  @media (max-width:640px) { nav .links a { margin-left:14px; } .shots { grid-template-columns:1fr; } }
+  .projects { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:24px; }
+  .project { background:var(--card); border:1px solid var(--line); border-radius:20px; box-shadow:var(--shadow); overflow:hidden; display:flex; flex-direction:column; }
+  .project img { width:100%; aspect-ratio:16/9; object-fit:cover; object-position:top; display:block; border-bottom:1px solid var(--line); }
+  .project .body { padding:22px; display:flex; flex-direction:column; gap:10px; flex:1; }
+  .project h3 { margin:0; font-size:20px; color:var(--title); }
+  .project p { margin:0; color:var(--muted); font-size:15px; }
+  .project .meta { font-size:13px; font-weight:600; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; }
+  .project .actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:auto; padding-top:8px; }
+  .project .actions a { font-size:14px; font-weight:600; padding:8px 14px; border-radius:10px; border:1px solid var(--line); color:var(--txt); }
+  .project .actions a.main { background:var(--acc); border-color:var(--acc); color:#fff; }
+  .project .actions a:hover { text-decoration:none; filter:brightness(1.08); }
+  .small { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-top:24px; }
+  .about { display:grid; grid-template-columns:1fr 1.4fr; gap:32px; align-items:start; }
+  .about p { color:var(--muted); margin:0 0 14px; }
+  .contact { display:flex; flex-wrap:wrap; gap:12px; }
+  @media (max-width:760px) { .about { grid-template-columns:1fr; } }
+</style>
 </head>
-<body data-scene="intro">
-    <nav class="site-nav" aria-label="Navegação principal">
-        <a class="brand" href="#inicio" aria-label="Ir para o início">
-            <span>João Vitor</span>
-            <small>Back-end / Infra de apoio</small>
-        </a>
-        <div class="nav-links">
-            <a href="#trabalho" data-nav="work">Trabalho</a>
-            <a href="#stack" data-nav="stack">Stack</a>
-            <a href="#sobre" data-nav="about">Sobre</a>
-            <a href="#contato" data-nav="contact">Contato</a>
+<body>
+<nav>
+  <div class="wrap">
+    <span class="logo">João Vitor</span>
+    <span class="links"><a href="#projetos">Projetos</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a></span>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <span class="eyebrow">Engenharia de Computação · UTFPR</span>
+    <h1>João Vitor Angelim Nogueira</h1>
+    <p class="lead">Desenvolvedor back-end em formação. Construo APIs em Node.js/TypeScript, Go e Python, com banco relacional, testes automatizados, Docker e CI, e gosto de entender como o sistema se comporta quando algo dá errado.</p>
+    <div class="btns">
+      <a class="btn primary" href="#projetos">Ver projetos</a>
+      <a class="btn" href="https://www.linkedin.com/in/vitorangn/">LinkedIn</a>
+      <a class="btn" href="https://github.com/VitorAngN">GitHub</a>
+    </div>
+  </div>
+</header>
+
+<section id="projetos">
+  <div class="wrap">
+    <h2>Projetos principais</h2>
+    <div class="projects">
+      <article class="project">
+        <div class="body">
+          <span class="meta">Node.js · TypeScript · MySQL</span>
+          <h3>Helpdesk Corporativo</h3>
+          <p>Sistema de chamados com três perfis, chat em tempo real e indicadores de SLA/CSAT. Controle de acesso por perfil e por dono do recurso, 49 testes automatizados, Docker e CI.</p>
+          <div class="actions"><a class="main" href="https://vitorangn.github.io/helpdesk-system/">Ver projeto</a><a class="" href="https://vitorangn.github.io/helpdesk-system/api/">API</a><a class="" href="https://github.com/VitorAngN/helpdesk-system">Código</a></div>
         </div>
-    </nav>
+      </article>
+      <article class="project">
+        
+        <div class="body">
+          <span class="meta">Go · PostgreSQL · Microsserviços</span>
+          <h3>Faturamento em Microsserviços</h3>
+          <p>Estoque e faturamento conversando por HTTP: baixa atômica, idempotência, retry com backoff e impressão à prova de clique duplo, com teste ponta a ponta em PostgreSQL no CI.</p>
+          <div class="actions"><a class="main" href="https://vitorangn.github.io/invoice-microservices-go/">Ver projeto</a><a class="" href="https://vitorangn.github.io/invoice-microservices-go/api/">API</a><a class="" href="https://youtu.be/vij8uouVOGg">Vídeo</a><a class="" href="https://github.com/VitorAngN/invoice-microservices-go">Código</a></div>
+        </div>
+      </article>
+      <article class="project">
+        
+        <div class="body">
+          <span class="meta">Python · FastAPI · GraphQL</span>
+          <h3>Gestão de Clientes + Pipefy</h3>
+          <p>API desenvolvida em teste técnico: cadastro de clientes, cards no Pipefy via GraphQL e webhooks idempotentes, com 24 testes e CI em duas versões do Python.</p>
+          <div class="actions"><a class="main" href="https://vitorangn.github.io/mundo-invest-backend-pipefy/">Ver projeto</a><a class="" href="https://vitorangn.github.io/mundo-invest-backend-pipefy/api/">API</a><a class="" href="https://github.com/VitorAngN/mundo-invest-backend-pipefy">Código</a></div>
+        </div>
+      </article>
+    </div>
+    <div class="small">
+      <div class="card"><h3>Emulador CHIP-8 (C++)</h3><p>CPU emulada do zero com Win32 API, testes de opcodes e CI no Linux e no Windows. <a href="https://github.com/VitorAngN/oldCPUEmulator">Código</a></p></div>
+      <div class="card"><h3>JobOps</h3><p>Gerenciador de candidaturas em Node.js, React e PostgreSQL, com métricas, follow-ups e exportação. <a href="https://github.com/VitorAngN/jobops">Código</a></p></div>
+    </div>
+  </div>
+</section>
 
-    <main>
-        <section class="hero panel" id="inicio" data-scene="intro">
-            <div class="hero-kicker reveal">Portfolio 2026 / VitorAngN</div>
-            <h1 class="hero-title reveal">
-                João Vitor
-            </h1>
-            <p class="hero-lead reveal">
-                Estudante de Engenharia de Computação focado em Back-end e APIs, com noções práticas de infraestrutura.
-                Eu gosto de transformar problema real em sistema que roda, registra, entrega e pode ser mantido.
-            </p>
-            <div class="hero-actions reveal">
-                <a class="button primary" href="#trabalho">Ver projetos</a>
-                <a class="button ghost" href="#contato">Contato</a>
-            </div>
+<section class="alt">
+  <div class="wrap">
+    <h2>Stack</h2>
+    <div class="grid">
+      <div class="card"><h3>Back-end</h3><p>Node.js, TypeScript, Express, Go, Python (FastAPI), Java. APIs REST, autenticação JWT, regras de negócio e integração entre serviços.</p></div>
+      <div class="card"><h3>Banco de dados</h3><p>PostgreSQL, MySQL, SQLite, Prisma, GORM e SQLAlchemy. Modelagem relacional, transações e controle de concorrência.</p></div>
+      <div class="card"><h3>Qualidade e entrega</h3><p>Testes automatizados (Vitest, Go test, Pytest), Docker e Docker Compose, GitHub Actions, Linux e deploy em AWS EC2.</p></div>
+      <div class="card"><h3>Base</h3><p>C/C++, estruturas de dados, redes e sistemas operacionais. Interesse por entender o que acontece abaixo do framework.</p></div>
+    </div>
+  </div>
+</section>
 
-            <div class="spotlight reveal" aria-label="Prévia visual dos projetos">
-                <div class="spotlight-header">
-                    <strong>Back-end / APIs / Infra de apoio</strong>
-                    <span>UTFPR</span>
-                </div>
-                <div class="spotlight-main">
-                    <div class="spotlight-copy">
-                        <span>selected work</span>
-                        <strong>projetos<br>que rodam</strong>
-                    </div>
-                    <figure class="screen screen-main">
-                        <img src="img/helpdesk-dashboard.png" alt="Dashboard do Helpdesk Corporativo">
-                    </figure>
-                    <figure class="screen screen-float">
-                        <img src="img/jobops-dashboard.png" alt="Dashboard do JobOps">
-                    </figure>
-                </div>
-                <div class="spotlight-footer">
-                    <a href="https://github.com/VitorAngN/helpdesk-system" target="_blank" rel="noreferrer">
-                        <span>01</span>
-                        <strong>Helpdesk</strong>
-                    </a>
-                    <a href="https://github.com/VitorAngN/jobops" target="_blank" rel="noreferrer">
-                        <span>02</span>
-                        <strong>JobOps</strong>
-                    </a>
-                    <a href="https://github.com/VitorAngN/oldCPUEmulator" target="_blank" rel="noreferrer">
-                        <span>03</span>
-                        <strong>CHIP-8</strong>
-                    </a>
-                    <a href="https://github.com/VitorAngN" target="_blank" rel="noreferrer">
-                        <span>04</span>
-                        <strong>Deploy</strong>
-                    </a>
-                </div>
-            </div>
-        </section>
+<section id="sobre">
+  <div class="wrap about">
+    <h2>Sobre</h2>
+    <div>
+      <p>Sou do Ceará e estudo Engenharia de Computação na UTFPR, no Paraná. Também sou Técnico em Informática e já trabalhei com suporte técnico, o que me deixou com o hábito de olhar para o sistema rodando, e não só para o código.</p>
+      <p>Hoje meu foco é back-end: APIs bem testadas, banco relacional, containers e CI. Busco estágio em desenvolvimento back-end. Inglês avançado (C1) e espanhol intermediário (B1).</p>
+    </div>
+  </div>
+</section>
 
-        <section class="panel work-panel" id="trabalho" data-scene="work">
-            <div class="section-head reveal">
-                <span>Selected work</span>
-                <h2>Projetos principais, mostrados como produto.</h2>
-            </div>
+<section class="alt" id="contato">
+  <div class="wrap">
+    <h2>Contato</h2>
+    <div class="contact">
+      <a class="btn primary" href="mailto:victornogueira1130@gmail.com">victornogueira1130@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/vitorangn/">LinkedIn</a>
+      <a class="btn" href="https://github.com/VitorAngN">GitHub</a>
+    </div>
+  </div>
+</section>
 
-            <div class="project-list">
-                <article class="project-card reveal">
-                    <a class="project-media" href="https://github.com/VitorAngN/helpdesk-system" target="_blank" rel="noreferrer">
-                        <img src="img/helpdesk-dashboard.png" alt="Tela do Helpdesk Corporativo">
-                    </a>
-                    <div class="project-copy">
-                        <span>01 / Support Ops</span>
-                        <h3>Helpdesk Corporativo</h3>
-                        <p>Fluxo de chamados, autenticação, chat em tempo real, Docker Compose, Nginx e deploy validado em AWS EC2.</p>
-                        <a href="https://github.com/VitorAngN/helpdesk-system" target="_blank" rel="noreferrer">Abrir no GitHub</a>
-                    </div>
-                </article>
-
-                <article class="project-card reveal">
-                    <a class="project-media" href="https://github.com/VitorAngN/jobops" target="_blank" rel="noreferrer">
-                        <img src="img/jobops-dashboard.png" alt="Dashboard do JobOps">
-                    </a>
-                    <div class="project-copy">
-                        <span>02 / Product & Career Ops</span>
-                        <h3>JobOps</h3>
-                        <p>Pipeline de candidaturas com métricas, empresas, currículos, follow-ups e exportação.</p>
-                        <a href="https://github.com/VitorAngN/jobops" target="_blank" rel="noreferrer">Abrir no GitHub</a>
-                    </div>
-                </article>
-
-                <article class="project-card reveal">
-                    <a class="project-media" href="https://github.com/VitorAngN/oldCPUEmulator" target="_blank" rel="noreferrer">
-                        <img src="img/cpu-emulator.png" alt="Emulador CHIP-8 em C++">
-                    </a>
-                    <div class="project-copy">
-                        <span>03 / Low-level</span>
-                        <h3>CHIP-8 Emulator</h3>
-                        <p>Emulador de CPU em C++, com ciclo fetch/decode/execute, memória simulada e renderização simples.</p>
-                        <a href="https://github.com/VitorAngN/oldCPUEmulator" target="_blank" rel="noreferrer">Abrir no GitHub</a>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section class="panel stack-panel" id="stack" data-scene="stack">
-            <div class="section-head reveal">
-                <span>Stack</span>
-                <h2>Gosto de fechar o ciclo: código, banco, container e deploy.</h2>
-            </div>
-
-            <div class="stack-grid">
-                <article class="stack-card reveal">
-                    <span>Back-end</span>
-                    <strong>Node.js / TypeScript / Go / Java</strong>
-                    <p>APIs REST, autenticação, regras de negócio, modelagem e integração com bancos relacionais.</p>
-                </article>
-                <article class="stack-card reveal">
-                    <span>Infraestrutura de apoio</span>
-                    <strong>Docker / Linux / AWS EC2 / GitHub Actions</strong>
-                    <p>Ambientes reproduzíveis, troubleshooting, logs, CI e validação prática de deploy.</p>
-                </article>
-                <article class="stack-card reveal">
-                    <span>Banco de dados</span>
-                    <strong>SQL / PostgreSQL / MySQL / Prisma</strong>
-                    <p>Modelagem relacional, consultas, transações e organização de dados para aplicações back-end.</p>
-                </article>
-                <article class="stack-card reveal">
-                    <span>Base</span>
-                    <strong>C/C++ / Redes / Sistemas Operacionais</strong>
-                    <p>Interesse forte por entender o que acontece abaixo das abstrações do framework.</p>
-                </article>
-            </div>
-        </section>
-
-        <section class="panel about-panel" id="sobre" data-scene="about">
-            <div class="about-copy reveal">
-                <span>Sobre</span>
-                <h2>Sou do Ceará, estudo no Paraná e gosto de construir até ficar usável.</h2>
-            </div>
-            <div class="about-text reveal">
-                    <p>
-                    Estou cursando Engenharia de Computação na UTFPR. Meu foco atual é consolidar uma base forte
-                    em back-end e infraestrutura de apoio: APIs, bancos, containers, Linux, CI e cloud básica.
-                </p>
-                <p>
-                    Tenho experiência prática com suporte técnico, projetos acadêmicos e projetos pessoais. Quero evoluir
-                    para um perfil que entende tanto arquitetura de software quanto operação.
-                </p>
-            </div>
-        </section>
-
-        <section class="panel contact-panel" id="contato" data-scene="contact">
-            <div class="contact-copy reveal">
-                <span>Contato</span>
-                <h2>Vamos conversar?</h2>
-                <p>Aberto para estágio, projetos, conversas técnicas e oportunidades em back-end/cloud/DevOps.</p>
-            </div>
-            <div class="contact-links reveal">
-                <a href="mailto:victornogueira1130@gmail.com">victornogueira1130@gmail.com</a>
-                <a href="https://www.linkedin.com/in/vitorangn/" target="_blank" rel="noreferrer">LinkedIn</a>
-                <a href="https://github.com/VitorAngN" target="_blank" rel="noreferrer">GitHub</a>
-            </div>
-        </section>
-    </main>
-
-    <script src="script.js?v=b386df9"></script>
+<footer>
+  <div class="wrap">© 2026 João Vitor Angelim Nogueira</div>
+</footer>
 </body>
 </html>
