@@ -35,7 +35,7 @@ nav .links a:hover{color:var(--red)}
 
 .hero{min-height:calc(100vh - 90px);display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:20px;padding-bottom:40px}
 .kicker{display:inline-block;background:var(--ink);color:var(--inv);font-weight:800;font-size:13px;letter-spacing:.18em;text-transform:uppercase;padding:6px 14px;transform:skew(-12deg)}
-h1{font-family:Anton,sans-serif;font-weight:400;font-size:clamp(60px,10vw,132px);line-height:.9;text-transform:uppercase;color:var(--ink);margin:22px 0 22px}
+h1{font-family:Anton,sans-serif;font-weight:400;font-size:clamp(60px,10vw,132px);line-height:.9;text-transform:uppercase;color:var(--ink);margin:22px 0 22px;padding-top:.12em}
 h1 .l{display:block;opacity:0;transform:translateX(-40px) skew(-8deg);animation:entra .7s cubic-bezier(.2,.8,.2,1) forwards}
 h1 .l:nth-child(2){animation-delay:.12s;color:var(--red)}
 @keyframes entra{to{opacity:1;transform:none}}
@@ -82,8 +82,9 @@ h2.visivel::after{transform:skew(-14deg) scaleX(1)}
 .proj:hover .ir{transform:none;opacity:1}
 
 .sobre{display:grid;grid-template-columns:1fr 1.6fr;gap:48px;align-items:start}
-.sobre p{margin:0 0 16px;font-size:17px} strong{color:var(--ink)}
-.citacao{font-family:Anton,sans-serif;font-size:clamp(34px,4vw,48px);line-height:1.05;text-transform:uppercase;color:var(--ink);position:sticky;top:60px}
+.texto{background:var(--card);border:2px solid var(--ink);border-radius:16px;padding:28px 30px;box-shadow:8px 8px 0 var(--red)}
+.sobre p{margin:0 0 16px;font-size:17px} .sobre p:last-child{margin:0} strong{color:var(--ink)}
+.citacao{padding:10px 0;font-family:Anton,sans-serif;font-size:clamp(34px,4vw,48px);line-height:1.05;text-transform:uppercase;color:var(--ink);position:sticky;top:60px}
 .citacao span{display:inline-block;background:var(--red);color:#fff;padding:0 10px;transform:skew(-10deg);margin:4px 0}
 
 .stack{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
@@ -91,6 +92,7 @@ h2.visivel::after{transform:skew(-14deg) scaleX(1)}
 .st h4{margin:0 0 6px;color:var(--ink);text-transform:uppercase;font-size:14px;letter-spacing:.08em} .st p{margin:0;font-size:14px;color:var(--muted)}
 
 .contato{background:var(--ink);color:var(--inv);border-radius:24px;padding:64px 48px;margin:40px 0 96px;position:relative;overflow:hidden}
+.contato>*{position:relative;z-index:1}
 .contato h2{color:var(--inv)} .contato p{max-width:460px;opacity:.85;margin:0 0 30px;font-size:17px}
 .contato::after{content:"";position:absolute;right:-60px;top:-40px;width:300px;height:380px;background:var(--red);clip-path:polygon(30% 0,100% 0,70% 100%,0 100%)}
 .acoes{display:flex;gap:16px;flex-wrap:wrap;position:relative;z-index:1}
@@ -102,7 +104,13 @@ h2.visivel::after{transform:skew(-14deg) scaleX(1)}
 @media(max-width:860px){
   .hero{grid-template-columns:1fr;min-height:auto;padding:30px 0 40px}
   .menu{margin-top:20px} .projs,.sobre{grid-template-columns:1fr} .stack{grid-template-columns:1fr 1fr}
-  .citacao{position:static} .caco.c1{width:70vw;right:-30vw} nav .links{display:none}
+  .citacao{position:static} nav .links{display:none}
+  .caco{width:16vw!important;opacity:1}
+  .caco.c1{right:-6vw;left:auto;top:4vh;height:60vh} .caco.c2{right:-4vw;left:auto;top:90vh}
+  .caco.c3{left:-8vw;right:auto} .caco.c4{right:-6vw;left:auto} .caco.c5{left:-6vw}
+  .estrela{display:none} .lead{background:var(--bg)}
+  .contato{padding:44px 26px} .contato::after{width:120px;height:260px;right:-50px}
+  .menu a{font-size:34px}
 }
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important} h1 .l,.lead,.menu li,.revelar{opacity:1;transform:none}}
 </style></head><body>
@@ -161,7 +169,7 @@ h2.visivel::after{transform:skew(-14deg) scaleX(1)}
         <div class="tags"><span>C++</span><span>WebAssembly</span><span>CMake</span></div></div>
         <span class="ir">→</span>
       </a></div></section>
-<section id="sobre"><h2 class="titulo">Sobre</h2><div class="sobre"><div class="citacao revelar">Morre,<br><span>aprende,</span><br>tenta de novo.</div><div class="revelar" style="--i:1"><p>Sou do Ceará e estudo <strong>Engenharia de Computação na UTFPR</strong>, no Paraná. Antes da faculdade fiz o técnico em informática e trabalhei com suporte, o que me deixou com o hábito de olhar para o sistema rodando, e não só para o código.</p><p>Hoje meu foco é <strong>back-end</strong>: APIs em Node.js/TypeScript, Go e Python, banco relacional, testes, containers e CI. Gosto dos problemas que aparecem quando muita coisa acontece ao mesmo tempo: dois cliques na mesma ação, uma requisição repetida, um serviço fora do ar.</p><p>Fora do código, sou aquele que morre 40 vezes no mesmo chefe e volta na 41ª. Levo esse jeito para os bugs também.</p></div></div></section>
+<section id="sobre"><h2 class="titulo">Sobre</h2><div class="sobre"><div class="citacao revelar">Morre,<br><span>aprende,</span><br>tenta de novo.</div><div class="texto revelar" style="--i:1"><p>Sou do Ceará e estudo <strong>Engenharia de Computação na UTFPR</strong>, no Paraná. Antes da faculdade fiz o técnico em informática e trabalhei com suporte, o que me deixou com o hábito de olhar para o sistema rodando, e não só para o código.</p><p>Hoje meu foco é <strong>back-end</strong>: APIs em Node.js/TypeScript, Go e Python, banco relacional, testes, containers e CI. Gosto dos problemas que aparecem quando muita coisa acontece ao mesmo tempo: dois cliques na mesma ação, uma requisição repetida, um serviço fora do ar.</p><p>Fora do código, sou aquele que morre 40 vezes no mesmo chefe e volta na 41ª. Levo esse jeito para os bugs também.</p></div></div></section>
 <section id="stack"><h2 class="titulo">Stack</h2><div class="stack"><div class="st revelar" style="--i:0"><h4>Back-end</h4><p>Node.js, TypeScript, Express, Go, Python, Java</p></div><div class="st revelar" style="--i:1"><h4>Dados</h4><p>PostgreSQL, MySQL, Prisma, GORM, SQLAlchemy</p></div><div class="st revelar" style="--i:2"><h4>Entrega</h4><p>Docker, GitHub Actions, Linux, AWS EC2, testes automatizados</p></div><div class="st revelar" style="--i:3"><h4>Base</h4><p>C/C++, estruturas de dados, redes, sistemas operacionais</p></div></div></section>
 <div class="contato revelar" id="contato"><h2 class="titulo visivel">Bora conversar?</h2><p>Se você tem uma vaga de estágio em back-end, eu quero ouvir.</p>
 <div class="acoes"><a class="btn p" href="mailto:victornogueira1130@gmail.com"><span>Enviar e-mail</span></a><a class="btn" href="https://www.linkedin.com/in/vitorangn/"><span>LinkedIn</span></a></div></div>
