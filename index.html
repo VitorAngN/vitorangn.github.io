@@ -90,15 +90,15 @@ h2.visivel::after{transform:skew(-14deg) scaleX(1)}
 .st{background:var(--card);border:2px solid var(--ink);border-radius:16px;padding:20px}
 .st h4{margin:0 0 6px;color:var(--ink);text-transform:uppercase;font-size:14px;letter-spacing:.08em} .st p{margin:0;font-size:14px;color:var(--muted)}
 
-.contato{background:var(--ink);color:var(--inv);border-radius:24px;padding:64px 48px;margin:40px 0 96px;position:relative;overflow:hidden}
+.contato{background:#0a0a0a;color:#fff;border:2px solid var(--ink);box-shadow:10px 10px 0 var(--red);border-radius:24px;padding:64px 48px;margin:40px 0 96px;position:relative;overflow:hidden}
 .contato>*{position:relative;z-index:1}
-.contato h2{color:var(--inv)} .contato p{max-width:460px;opacity:.85;margin:0 0 30px;font-size:17px}
-.contato::after{content:"";position:absolute;right:-60px;top:-40px;width:300px;height:380px;background:var(--red);clip-path:polygon(30% 0,100% 0,70% 100%,0 100%)}
+.contato h2{color:#fff} .contato p{max-width:460px;opacity:.85;margin:0 0 30px;font-size:17px}
+.contato::after{content:"";position:absolute;right:-60px;top:-40px;width:300px;height:calc(100% + 80px);background:var(--red);clip-path:polygon(30% 0,100% 0,70% 100%,0 100%)}
 .acoes{display:flex;gap:16px;flex-wrap:wrap;position:relative;z-index:1}
-.btn{display:inline-block;padding:14px 28px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:14px;transform:skew(-10deg);border:2px solid var(--inv);transition:transform .15s,box-shadow .15s}
+.btn{display:inline-block;padding:14px 28px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:14px;transform:skew(-10deg);border:2px solid #fff;color:#fff;transition:transform .15s,box-shadow .15s}
 .btn>span{display:inline-block;transform:skew(10deg)}
 .btn.p{background:var(--red);border-color:var(--red);color:#fff}
-.btn:hover{transform:skew(-10deg) translate(-3px,-3px);box-shadow:6px 6px 0 var(--inv)}
+.btn:hover{transform:skew(-10deg) translate(-3px,-3px);box-shadow:6px 6px 0 #fff}
 
 @media(max-width:860px){
   .hero{grid-template-columns:1fr;min-height:auto;padding:30px 0 40px}
