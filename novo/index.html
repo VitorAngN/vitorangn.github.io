@@ -1,0 +1,195 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>João Vitor — Desenvolvedor Back-end</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Portfólio de João Vitor Angelim Nogueira, estudante de Engenharia de Computação (UTFPR) com foco em back-end.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light dark;--bg:#ffffff;--ink:#0a0a0a;--txt:#262626;--muted:#6b6b6b;--red:#e11d2e;--card:#ffffff;--soft:#f3f3f3;--inv:#ffffff;--dots:rgba(10,10,10,.07)}
+@media (prefers-color-scheme:dark){:root{--bg:#0b0b0c;--ink:#fafafa;--txt:#e5e5e5;--muted:#a3a3a3;--red:#ff2d40;--card:#131314;--soft:#1b1b1d;--inv:#0b0b0c;--dots:rgba(255,255,255,.06)}}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 Inter,system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px;position:relative}
+
+/* ---------- fundo que acompanha a rolagem ---------- */
+.fundo{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.pontos{position:absolute;inset:-200px;background-image:radial-gradient(var(--dots) 1.6px,transparent 1.7px);background-size:18px 18px;will-change:transform}
+.caco{position:absolute;will-change:transform}
+.caco.c1{right:-8vw;top:6vh;width:46vw;height:78vh;background:var(--red);clip-path:polygon(22% 0,100% 0,78% 100%,0 100%)}
+.caco.c2{right:34vw;top:84vh;width:14vw;height:44vh;background:var(--ink);clip-path:polygon(40% 0,100% 0,60% 100%,0 100%)}
+.caco.c3{left:-6vw;top:120vh;width:30vw;height:60vh;background:var(--red);clip-path:polygon(0 10%,100% 0,85% 100%,0 90%);opacity:.9}
+.caco.c4{right:-4vw;top:190vh;width:22vw;height:70vh;background:var(--ink);clip-path:polygon(30% 0,100% 0,70% 100%,0 100%);opacity:.9}
+.caco.c5{left:8vw;top:260vh;width:10vw;height:40vh;background:var(--red);clip-path:polygon(50% 0,100% 0,50% 100%,0 100%)}
+.estrela{position:absolute;width:90px;height:90px;background:var(--ink);clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);will-change:transform}
+.estrela.e1{right:12vw;top:70vh} .estrela.e2{left:4vw;top:180vh;width:60px;height:60px;background:var(--red)}
+
+/* barra de progresso */
+.progresso{position:fixed;top:0;left:0;height:6px;width:100%;background:var(--red);transform-origin:left;transform:scaleX(0);z-index:50}
+
+/* ---------- topo ---------- */
+nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0}
+.logo{font-family:Anton,sans-serif;font-size:24px;background:var(--ink);color:var(--inv);padding:2px 14px;transform:skew(-10deg);display:inline-block}
+nav .links a{margin-left:22px;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.1em}
+nav .links a:hover{color:var(--red)}
+
+.hero{min-height:calc(100vh - 90px);display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:20px;padding-bottom:40px}
+.kicker{display:inline-block;background:var(--ink);color:var(--inv);font-weight:800;font-size:13px;letter-spacing:.18em;text-transform:uppercase;padding:6px 14px;transform:skew(-12deg)}
+h1{font-family:Anton,sans-serif;font-weight:400;font-size:clamp(60px,10vw,132px);line-height:.9;text-transform:uppercase;color:var(--ink);margin:22px 0 22px}
+h1 .l{display:block;opacity:0;transform:translateX(-40px) skew(-8deg);animation:entra .7s cubic-bezier(.2,.8,.2,1) forwards}
+h1 .l:nth-child(2){animation-delay:.12s;color:var(--red)}
+@keyframes entra{to{opacity:1;transform:none}}
+.lead{max-width:500px;font-size:18px;font-weight:500;opacity:0;animation:entra .7s .3s forwards}
+
+/* menu estilo jogo */
+.menu{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.menu li{opacity:0;animation:entra .5s forwards}
+.menu li:nth-child(1){animation-delay:.35s;margin-left:0} .menu li:nth-child(2){animation-delay:.45s;margin-left:28px}
+.menu li:nth-child(3){animation-delay:.55s;margin-left:56px} .menu li:nth-child(4){animation-delay:.65s;margin-left:84px}
+.menu a{position:relative;display:inline-block;font-family:Anton,sans-serif;font-size:clamp(34px,4.4vw,54px);line-height:1.1;text-transform:uppercase;color:var(--ink);padding:2px 18px;transform:rotate(-4deg);transition:transform .18s,color .18s;isolation:isolate}
+.menu a>span.papel{position:absolute;inset:4px -6px;background:var(--bg);transform:skew(-14deg);z-index:-3;box-shadow:4px 4px 0 var(--ink)}
+.menu a::before{content:"";position:absolute;inset:4px -6px;background:var(--ink);transform:skew(-14deg) scaleX(0);transform-origin:left;transition:transform .2s cubic-bezier(.2,.8,.2,1);z-index:-1}
+.menu a::after{content:"";position:absolute;inset:10px -14px 0 4px;background:var(--red);transform:skew(-14deg) scaleX(0);transform-origin:left;transition:transform .2s .04s cubic-bezier(.2,.8,.2,1);z-index:-2}
+.menu a:hover,.menu a:focus-visible{color:var(--inv);transform:rotate(-4deg) translateX(14px) scale(1.06);outline:none}
+.menu a:hover::before,.menu a:focus-visible::before,.menu a:hover::after,.menu a:focus-visible::after{transform:skew(-14deg) scaleX(1)}
+.menu small{font-family:Inter,sans-serif;font-size:13px;font-weight:800;letter-spacing:.12em;vertical-align:middle;margin-left:10px;color:var(--red)}
+.menu a:hover small{color:var(--inv)}
+
+/* ---------- seções ---------- */
+section{padding:80px 0}
+h2{font-family:Anton,sans-serif;font-weight:400;font-size:clamp(46px,6vw,72px);line-height:1;text-transform:uppercase;color:var(--ink);margin:0 0 36px;display:inline-block;position:relative}
+h2::after{content:"";position:absolute;left:-10px;right:-18px;bottom:6px;height:22px;background:var(--red);z-index:-1;transform:skew(-14deg) scaleX(0);transform-origin:left;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+h2.visivel::after{transform:skew(-14deg) scaleX(1)}
+
+.revelar{opacity:0;transform:translateY(40px) skewY(2deg);transition:opacity .6s,transform .6s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0) * 90ms)}
+.revelar.visivel{opacity:1;transform:none}
+
+.projs{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.proj{position:relative;display:flex;gap:18px;background:var(--card);border:2px solid var(--ink);border-radius:16px;padding:26px 26px 26px 22px;overflow:hidden}
+.proj::before{content:"";position:absolute;inset:0;background:var(--ink);clip-path:polygon(0 0,0 0,0 100%,0 100%);transition:clip-path .35s cubic-bezier(.2,.8,.2,1);z-index:0}
+.proj>*{position:relative;z-index:1}
+.proj:hover{transform:translate(-4px,-4px);box-shadow:8px 8px 0 var(--red)}
+.proj.visivel{transition:opacity .6s,transform .18s,box-shadow .18s}
+.proj:hover::before{clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+.proj:hover h3,.proj:hover p{color:var(--inv)} .proj:hover .meta{color:var(--red)}
+.proj:hover .tags span{background:var(--red);color:#fff}
+.num{font-family:Anton,sans-serif;font-size:44px;line-height:1;color:var(--red)}
+.meta{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.proj h3{margin:4px 0 6px;font-size:22px;color:var(--ink);font-weight:800;transition:color .2s}
+.proj p{margin:0 0 14px;font-size:15px;transition:color .2s}
+.tags{display:flex;flex-wrap:wrap;gap:6px} .tags span{font-size:12px;font-weight:700;background:var(--soft);padding:3px 10px;border-radius:999px;transition:background .2s,color .2s}
+.ir{position:absolute!important;right:22px;bottom:16px;font-size:26px;font-weight:800;color:var(--red);transform:translateX(-10px);opacity:0;transition:.2s}
+.proj:hover .ir{transform:none;opacity:1}
+
+.sobre{display:grid;grid-template-columns:1fr 1.6fr;gap:48px;align-items:start}
+.sobre p{margin:0 0 16px;font-size:17px} strong{color:var(--ink)}
+.citacao{font-family:Anton,sans-serif;font-size:clamp(34px,4vw,48px);line-height:1.05;text-transform:uppercase;color:var(--ink);position:sticky;top:60px}
+.citacao span{display:inline-block;background:var(--red);color:#fff;padding:0 10px;transform:skew(-10deg);margin:4px 0}
+
+.stack{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.st{background:var(--card);border:2px solid var(--ink);border-radius:16px;padding:20px}
+.st h4{margin:0 0 6px;color:var(--ink);text-transform:uppercase;font-size:14px;letter-spacing:.08em} .st p{margin:0;font-size:14px;color:var(--muted)}
+
+.contato{background:var(--ink);color:var(--inv);border-radius:24px;padding:64px 48px;margin:40px 0 96px;position:relative;overflow:hidden}
+.contato h2{color:var(--inv)} .contato p{max-width:460px;opacity:.85;margin:0 0 30px;font-size:17px}
+.contato::after{content:"";position:absolute;right:-60px;top:-40px;width:300px;height:380px;background:var(--red);clip-path:polygon(30% 0,100% 0,70% 100%,0 100%)}
+.acoes{display:flex;gap:16px;flex-wrap:wrap;position:relative;z-index:1}
+.btn{display:inline-block;padding:14px 28px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:14px;transform:skew(-10deg);border:2px solid var(--inv);transition:transform .15s,box-shadow .15s}
+.btn>span{display:inline-block;transform:skew(10deg)}
+.btn.p{background:var(--red);border-color:var(--red);color:#fff}
+.btn:hover{transform:skew(-10deg) translate(-3px,-3px);box-shadow:6px 6px 0 var(--inv)}
+
+@media(max-width:860px){
+  .hero{grid-template-columns:1fr;min-height:auto;padding:30px 0 40px}
+  .menu{margin-top:20px} .projs,.sobre{grid-template-columns:1fr} .stack{grid-template-columns:1fr 1fr}
+  .citacao{position:static} .caco.c1{width:70vw;right:-30vw} nav .links{display:none}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important} h1 .l,.lead,.menu li,.revelar{opacity:1;transform:none}}
+</style></head><body>
+
+<div class="fundo" aria-hidden="true">
+  <div class="pontos" data-vel="-0.15"></div>
+  <div class="caco c1" data-vel="-0.35"></div>
+  <div class="caco c2" data-vel="-0.6"></div>
+  <div class="caco c3" data-vel="-0.45"></div>
+  <div class="caco c4" data-vel="-0.7"></div>
+  <div class="caco c5" data-vel="-0.9"></div>
+  <div class="estrela e1" data-vel="-0.5" data-giro="0.08"></div>
+  <div class="estrela e2" data-vel="-0.8" data-giro="-0.12"></div>
+</div>
+<div class="progresso" id="progresso"></div>
+
+<div class="wrap">
+<nav><span class="logo">J.VITOR</span><div class="links"><a href="https://github.com/VitorAngN">GitHub</a><a href="https://www.linkedin.com/in/vitorangn/">LinkedIn</a></div></nav>
+
+<header class="hero">
+  <div>
+    <span class="kicker">Back-end · UTFPR</span>
+    <h1><span class="l">João Vitor</span><span class="l">Nogueira</span></h1>
+    <p class="lead">Desenvolvedor back-end atrás do primeiro estágio. APIs testadas, banco relacional, Docker e CI.</p>
+  </div>
+  <ul class="menu">
+    <li><a href="#projetos"><span class="papel"></span>Projetos<small>04</small></a></li>
+    <li><a href="#sobre"><span class="papel"></span>Sobre</a></li>
+    <li><a href="#stack"><span class="papel"></span>Stack</a></li>
+    <li><a href="#contato"><span class="papel"></span>Contato</a></li>
+  </ul>
+</header>
+
+<section id="projetos"><h2 class="titulo">Projetos</h2><div class="projs">
+      <a class="proj revelar" href="https://vitorangn.github.io/helpdesk-system/" style="--i:0">
+        <span class="num">01</span>
+        <div class="corpo"><span class="meta">Node.js · TypeScript · MySQL</span><h3>Helpdesk Corporativo</h3><p>Sistema de chamados com três perfis, chat em tempo real e indicadores de SLA e CSAT. Tem demo para testar no navegador.</p>
+        <div class="tags"><span>Express</span><span>Prisma</span><span>Socket.io</span><span>JWT</span><span>Docker</span></div></div>
+        <span class="ir">→</span>
+      </a>
+      <a class="proj revelar" href="https://vitorangn.github.io/invoice-microservices-go/" style="--i:1">
+        <span class="num">02</span>
+        <div class="corpo"><span class="meta">Go · PostgreSQL</span><h3>Faturamento em Microsserviços</h3><p>Estoque e faturamento conversando por HTTP, com baixa de estoque atômica, idempotência e retry com backoff.</p>
+        <div class="tags"><span>Go</span><span>Gin</span><span>GORM</span><span>PostgreSQL</span><span>Angular</span></div></div>
+        <span class="ir">→</span>
+      </a>
+      <a class="proj revelar" href="https://vitorangn.github.io/mundo-invest-backend-pipefy/" style="--i:2">
+        <span class="num">03</span>
+        <div class="corpo"><span class="meta">Python · FastAPI</span><h3>Gestão de Clientes + Pipefy</h3><p>API que abre cards no Pipefy via GraphQL e processa webhooks com idempotência. 24 testes e CI.</p>
+        <div class="tags"><span>FastAPI</span><span>SQLAlchemy</span><span>Pytest</span><span>GraphQL</span></div></div>
+        <span class="ir">→</span>
+      </a>
+      <a class="proj revelar" href="https://vitorangn.github.io/oldCPUEmulator/" style="--i:3">
+        <span class="num">04</span>
+        <div class="corpo"><span class="meta">C++ · WebAssembly</span><h3>Emulador CHIP-8</h3><p>CPU dos anos 70 emulada do zero e compilada para WebAssembly. Dá para jogar Pong e Tetris no navegador.</p>
+        <div class="tags"><span>C++</span><span>WebAssembly</span><span>CMake</span></div></div>
+        <span class="ir">→</span>
+      </a></div></section>
+<section id="sobre"><h2 class="titulo">Sobre</h2><div class="sobre"><div class="citacao revelar">Morre,<br><span>aprende,</span><br>tenta de novo.</div><div class="revelar" style="--i:1"><p>Sou do Ceará e estudo <strong>Engenharia de Computação na UTFPR</strong>, no Paraná. Antes da faculdade fiz o técnico em informática e trabalhei com suporte, o que me deixou com o hábito de olhar para o sistema rodando, e não só para o código.</p><p>Hoje meu foco é <strong>back-end</strong>: APIs em Node.js/TypeScript, Go e Python, banco relacional, testes, containers e CI. Gosto dos problemas que aparecem quando muita coisa acontece ao mesmo tempo: dois cliques na mesma ação, uma requisição repetida, um serviço fora do ar.</p><p>Fora do código, sou aquele que morre 40 vezes no mesmo chefe e volta na 41ª. Levo esse jeito para os bugs também.</p></div></div></section>
+<section id="stack"><h2 class="titulo">Stack</h2><div class="stack"><div class="st revelar" style="--i:0"><h4>Back-end</h4><p>Node.js, TypeScript, Express, Go, Python, Java</p></div><div class="st revelar" style="--i:1"><h4>Dados</h4><p>PostgreSQL, MySQL, Prisma, GORM, SQLAlchemy</p></div><div class="st revelar" style="--i:2"><h4>Entrega</h4><p>Docker, GitHub Actions, Linux, AWS EC2, testes automatizados</p></div><div class="st revelar" style="--i:3"><h4>Base</h4><p>C/C++, estruturas de dados, redes, sistemas operacionais</p></div></div></section>
+<div class="contato revelar" id="contato"><h2 class="titulo visivel">Bora conversar?</h2><p>Se você tem uma vaga de estágio em back-end, eu quero ouvir.</p>
+<div class="acoes"><a class="btn p" href="mailto:victornogueira1130@gmail.com"><span>Enviar e-mail</span></a><a class="btn" href="https://www.linkedin.com/in/vitorangn/"><span>LinkedIn</span></a></div></div>
+</div>
+
+<script>
+  // Fundo em camadas: cada peça desce numa velocidade diferente (parallax) e a barra mostra o progresso.
+  const pecas = [...document.querySelectorAll('[data-vel]')];
+  const barra = document.getElementById('progresso');
+  const reduzir = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let pendente = false;
+  function atualizar() {
+    const y = scrollY;
+    const max = document.documentElement.scrollHeight - innerHeight;
+    barra.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
+    if (!reduzir) pecas.forEach((p) => {
+      const giro = p.dataset.giro ? ` rotate(${y * p.dataset.giro}deg)` : '';
+      p.style.transform = `translate3d(0, ${y * p.dataset.vel}px, 0)${giro}`;
+    });
+    pendente = false;
+  }
+  addEventListener('scroll', () => { if (!pendente) { pendente = true; requestAnimationFrame(atualizar); } }, { passive: true });
+  atualizar();
+
+  // Elementos entram quando aparecem na tela.
+  const obs = new IntersectionObserver((itens) => itens.forEach((e) => {
+    if (e.isIntersecting) { e.target.classList.add('visivel'); obs.unobserve(e.target); }
+  }), { threshold: 0.15 });
+  document.querySelectorAll('.revelar, .titulo').forEach((el) => obs.observe(el));
+</script>
+</body></html>
