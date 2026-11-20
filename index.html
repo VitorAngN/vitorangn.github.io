@@ -54,21 +54,6 @@ h1 .l:nth-child(2){animation-delay:.12s;color:var(--red)}
 .menu small{font-family:Inter,sans-serif;font-size:13px;font-weight:800;letter-spacing:.12em;vertical-align:middle;margin-left:10px;color:var(--red)}
 .menu a:hover small{color:var(--inv)}
 
-/* espaços para arte (arquivos em /arte; se o arquivo não existir, o espaço some) */
-.arte{margin:0;pointer-events:none}
-.arte img{display:block;width:100%;height:100%}
-.lado-menu{position:relative;align-self:stretch;display:flex;align-items:center}
-.lado-menu .menu{position:relative;z-index:1}
-.arte-topo{position:absolute;right:-4%;bottom:0;height:100%;width:78%;z-index:0}
-.arte-topo img{object-fit:contain;object-position:bottom right;filter:drop-shadow(10px 10px 0 var(--ink))}
-.coluna-citacao{position:sticky;top:60px}
-.coluna-citacao .citacao{position:static}
-.arte-sobre{margin-top:24px;aspect-ratio:4/5;clip-path:polygon(12% 0,100% 0,88% 100%,0 100%);background:var(--red)}
-.arte-sobre img{object-fit:cover;mix-blend-mode:normal}
-.arte-contato{position:absolute!important;right:10px;bottom:0;height:96%;width:36%;z-index:1!important}
-.arte-contato img{object-fit:contain;object-position:bottom right;filter:drop-shadow(8px 8px 0 #000)}
-.contato:has(.arte-contato) p{max-width:52%}
-@media(max-width:860px){.arte-topo{position:relative;right:auto;width:100%;height:300px;margin-bottom:12px;order:-1}.lado-menu{flex-direction:column;align-items:flex-start}.coluna-citacao{position:static}.arte-sobre{max-width:280px}.arte-contato{width:44%;height:70%;opacity:.9}.contato:has(.arte-contato) p{max-width:60%}}
 /* ---------- seções ---------- */
 section{padding:80px 0}
 h2{font-family:Anton,sans-serif;font-weight:400;font-size:clamp(46px,6vw,72px);line-height:1;text-transform:uppercase;color:var(--ink);margin:0 0 36px;display:inline-block;position:relative}
@@ -153,15 +138,12 @@ h2.visivel::after{transform:skew(-14deg) scaleX(1)}
     <h1><span class="l">João Vitor</span><span class="l">Nogueira</span></h1>
     <p class="lead">Desenvolvedor back-end atrás do primeiro estágio. APIs testadas, banco relacional, Docker e CI.</p>
   </div>
-  <div class="lado-menu">
-  <figure class="arte arte-topo"><img src="arte/topo.png" alt="" onerror="this.parentNode.remove()"></figure>
   <ul class="menu">
     <li><a href="#projetos"><span class="papel"></span>Projetos<small>04</small></a></li>
     <li><a href="#sobre"><span class="papel"></span>Sobre</a></li>
     <li><a href="#stack"><span class="papel"></span>Stack</a></li>
     <li><a href="#contato"><span class="papel"></span>Contato</a></li>
   </ul>
-  </div>
 </header>
 
 <section id="projetos"><h2 class="titulo">Projetos</h2><div class="projs">
@@ -189,9 +171,9 @@ h2.visivel::after{transform:skew(-14deg) scaleX(1)}
         <div class="tags"><span>C++</span><span>WebAssembly</span><span>CMake</span></div></div>
         <span class="ir">→</span><svg class="icone" viewBox="0 0 64 64" aria-hidden="true"><g transform="skewX(-8) translate(6 0)"><g transform="translate(4 4)" fill="var(--red)"><rect x="16" y="16" width="32" height="32"/><g><rect x="20" y="8" width="5" height="8"/><rect x="30" y="8" width="5" height="8"/><rect x="40" y="8" width="5" height="8"/><rect x="20" y="48" width="5" height="8"/><rect x="30" y="48" width="5" height="8"/><rect x="40" y="48" width="5" height="8"/><rect x="8" y="22" width="8" height="5"/><rect x="8" y="34" width="8" height="5"/><rect x="48" y="22" width="8" height="5"/><rect x="48" y="34" width="8" height="5"/></g><rect x="25" y="25" width="14" height="14" fill="var(--icone-fundo)"/></g><g fill="currentColor"><rect x="16" y="16" width="32" height="32"/><g><rect x="20" y="8" width="5" height="8"/><rect x="30" y="8" width="5" height="8"/><rect x="40" y="8" width="5" height="8"/><rect x="20" y="48" width="5" height="8"/><rect x="30" y="48" width="5" height="8"/><rect x="40" y="48" width="5" height="8"/><rect x="8" y="22" width="8" height="5"/><rect x="8" y="34" width="8" height="5"/><rect x="48" y="22" width="8" height="5"/><rect x="48" y="34" width="8" height="5"/></g><rect x="25" y="25" width="14" height="14" fill="var(--icone-fundo)"/></g></g></svg>
       </a></div></section>
-<section id="sobre"><h2 class="titulo">Sobre</h2><div class="sobre"><div class="coluna-citacao"><div class="citacao revelar">Morre,<br><span>aprende,</span><br>tenta de novo.</div><figure class="arte arte-sobre revelar"><img src="arte/sobre.png" alt="" onerror="this.parentNode.remove()"></figure></div><div class="texto revelar" style="--i:1"><p>Sou do Ceará e estudo <strong>Engenharia de Computação na UTFPR</strong>, no Paraná. Antes da faculdade fiz o técnico em informática e trabalhei com suporte, o que me deixou com o hábito de olhar para o sistema rodando, e não só para o código.</p><p>Hoje meu foco é <strong>back-end</strong>: APIs em Node.js/TypeScript, Go e Python, banco relacional, testes, containers e CI. Gosto dos problemas que aparecem quando muita coisa acontece ao mesmo tempo: dois cliques na mesma ação, uma requisição repetida, um serviço fora do ar.</p><p>Fora do código, sou aquele que morre 40 vezes no mesmo chefe e volta na 41ª. Levo esse jeito para os bugs também.</p></div></div></section>
+<section id="sobre"><h2 class="titulo">Sobre</h2><div class="sobre"><div class="citacao revelar">Morre,<br><span>aprende,</span><br>tenta de novo.</div><div class="texto revelar" style="--i:1"><p>Sou do Ceará e estudo <strong>Engenharia de Computação na UTFPR</strong>, no Paraná. Antes da faculdade fiz o técnico em informática e trabalhei com suporte, o que me deixou com o hábito de olhar para o sistema rodando, e não só para o código.</p><p>Hoje meu foco é <strong>back-end</strong>: APIs em Node.js/TypeScript, Go e Python, banco relacional, testes, containers e CI. Gosto dos problemas que aparecem quando muita coisa acontece ao mesmo tempo: dois cliques na mesma ação, uma requisição repetida, um serviço fora do ar.</p><p>Fora do código, sou aquele que morre 40 vezes no mesmo chefe e volta na 41ª. Levo esse jeito para os bugs também.</p></div></div></section>
 <section id="stack"><h2 class="titulo">Stack</h2><div class="stack"><div class="st revelar" style="--i:0"><h4>Back-end</h4><p>Node.js, TypeScript, Express, Go, Python, Java</p></div><div class="st revelar" style="--i:1"><h4>Dados</h4><p>PostgreSQL, MySQL, Prisma, GORM, SQLAlchemy</p></div><div class="st revelar" style="--i:2"><h4>Entrega</h4><p>Docker, GitHub Actions, Linux, AWS EC2, testes automatizados</p></div><div class="st revelar" style="--i:3"><h4>Base</h4><p>C/C++, estruturas de dados, redes, sistemas operacionais</p></div></div></section>
-<div class="contato revelar" id="contato"><figure class="arte arte-contato"><img src="arte/contato.png" alt="" onerror="this.parentNode.remove()"></figure><h2 class="titulo visivel">Bora conversar?</h2><p>Se você tem uma vaga de estágio em back-end, eu quero ouvir.</p>
+<div class="contato revelar" id="contato"><h2 class="titulo visivel">Bora conversar?</h2><p>Se você tem uma vaga de estágio em back-end, eu quero ouvir.</p>
 <div class="acoes"><a class="btn p" href="mailto:victornogueira1130@gmail.com"><span>Enviar e-mail</span></a><a class="btn" href="https://www.linkedin.com/in/vitorangn/"><span>LinkedIn</span></a></div></div>
 </div>
 
