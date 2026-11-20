@@ -9,166 +9,158 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root { color-scheme: light dark; --bg:#ffffff; --soft:#f6f8fb; --card:#ffffff; --line:#e5e9f0; --txt:#1f2937; --title:#111827; --muted:#6b7280; --acc:#1e3a5f; --link:#2563eb; --chip:#eef2f7; --chip-hover:#e1e8f1; --acc-hover:#16304f; --code:#f1f4f9; --shadow:0 4px 16px rgba(16,24,40,.06); }
+  :root { color-scheme: light dark; --bg:#ffffff; --hover:#f4f6f9; --txt:#334155; --title:#0f172a; --muted:#64748b; --acc:#1e3a5f; --link:#2563eb; --pill:#e8eef7; --pill-txt:#1e3a5f; }
   @media (prefers-color-scheme: dark) {
-    :root { --bg:#0f1115; --soft:#151922; --card:#1a1f29; --line:#2a313d; --txt:#e5e7eb; --title:#f3f4f6; --muted:#9ca3af; --acc:#3b6ea8; --link:#7aa7ff; --chip:#232b38; --chip-hover:#2d3747; --acc-hover:#4a7fbd; --code:#232a36; --shadow:0 4px 16px rgba(0,0,0,.35); }
+    :root { --bg:#0f1115; --hover:#181d26; --txt:#cbd5e1; --title:#f1f5f9; --muted:#94a3b8; --acc:#7aa7ff; --link:#7aa7ff; --pill:#1c2a40; --pill-txt:#a9c6ff; }
   }
   * { box-sizing:border-box; }
   html { scroll-behavior:smooth; }
-  body { margin:0; font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--txt); line-height:1.6; }
-  a { color:var(--link); text-decoration:none; } a:hover { text-decoration:underline; }
-  .wrap { max-width:1080px; margin:0 auto; padding:0 24px; }
-  nav { background:var(--bg); position:sticky; top:0; z-index:10; box-shadow:0 1px 0 rgba(0,0,0,.04), 0 2px 12px rgba(0,0,0,.04); }
-  nav .wrap { display:flex; align-items:center; justify-content:space-between; height:64px; gap:16px; }
-  nav .logo { font-weight:700; color:var(--title); }
-  nav .links a { color:var(--muted); margin-left:24px; font-weight:500; font-size:15px; }
-  header { padding:72px 0 56px; background:var(--soft); }
-  .eyebrow { display:inline-block; background:var(--chip); color:var(--title); font-size:13px; font-weight:600; padding:6px 12px; border-radius:999px; }
-  h1 { font-size:clamp(32px,5vw,46px); margin:16px 0 12px; line-height:1.15; color:var(--title); }
-  .lead { font-size:18px; color:var(--muted); max-width:720px; }
-  .btns { display:flex; align-items:center; gap:24px; flex-wrap:wrap; margin-top:28px; }
-  .btn { display:inline-flex; align-items:center; gap:8px; padding:12px 22px; border-radius:12px; border:0; background:var(--chip); color:var(--title); font-weight:600; cursor:pointer; transition:background .15s, transform .15s, box-shadow .15s; }
-  .btn:hover { text-decoration:none; background:var(--chip-hover); transform:translateY(-1px); }
-  .btn.primary { background:var(--acc); color:#fff; box-shadow:0 4px 14px rgba(30,58,95,.25); }
-  .btn.primary:hover { background:var(--acc-hover); }
-  .arrow { font-weight:600; color:var(--link); }
-  .arrow::after { content:" →"; }
-  section { padding:64px 0; }
-  section.alt { background:transparent; }
-  h2 { font-size:28px; margin:0 0 24px; color:var(--title); }
-  .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; }
-  .stat, .card, figure { background:var(--card); border:1px solid var(--line); border-radius:20px; box-shadow:var(--shadow); }
-  @media (prefers-color-scheme: dark) { .stat, .card, figure { border-color:transparent; } }
-  .stat { padding:24px; }
-  .stat b { display:block; font-size:34px; color:var(--title); }
-  .stat span { color:var(--muted); font-size:15px; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px; }
-  .card { padding:24px; }
-  .card h3 { margin:0 0 8px; font-size:18px; color:var(--title); }
-  .card p { margin:0; color:var(--muted); font-size:15px; }
-  code { background:var(--code); padding:2px 6px; border-radius:6px; font-size:14px; }
-  .tags { display:flex; flex-wrap:wrap; gap:10px; }
-  .tag { background:var(--card); border:1px solid var(--line); border-radius:999px; padding:8px 14px; font-size:14px; font-weight:500; }
-  .shots { display:grid; grid-template-columns:repeat(auto-fit,minmax(420px,1fr)); gap:20px; }
-  figure { margin:0; overflow:hidden; }
-  figure img { width:100%; display:block; aspect-ratio:16/10; object-fit:cover; object-position:top; }
-  figcaption { padding:12px 16px; color:var(--muted); font-size:14px; font-weight:500; }
-  pre { background:#0f172a; color:#e2e8f0; border:0; border-radius:16px; padding:20px; overflow:auto; font-size:14px; }
-  footer { padding:24px 0 48px; color:var(--muted); font-size:14px; }
-  @media (max-width:640px) { nav .links a { margin-left:14px; } .shots { grid-template-columns:1fr; } }
-  .projects { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:24px; }
-  .project { background:var(--card); border:1px solid var(--line); border-radius:20px; box-shadow:var(--shadow); overflow:hidden; display:flex; flex-direction:column; }
-  .project img { width:100%; aspect-ratio:16/9; object-fit:cover; object-position:top; display:block; border-bottom:1px solid var(--line); }
-  .project .body { padding:22px; display:flex; flex-direction:column; gap:10px; flex:1; }
-  .project h3 { margin:0; font-size:20px; color:var(--title); }
-  .project p { margin:0; color:var(--muted); font-size:15px; }
-  .project .meta { font-size:13px; font-weight:600; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; }
-  .project .actions { display:flex; flex-wrap:wrap; align-items:center; gap:18px; margin-top:auto; padding-top:12px; }
-  .project .actions .btn { padding:10px 18px; font-size:14px; }
-  .project .actions .arrow { font-size:14px; }
-  .btns { align-items:center; gap:24px; }
-  .small { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-top:24px; }
-  .about { display:grid; grid-template-columns:1fr 1.4fr; gap:32px; align-items:start; }
-  .about p { color:var(--muted); margin:0 0 14px; }
-  .contact { display:flex; flex-wrap:wrap; gap:12px; }
-  @media (max-width:760px) { .about { grid-template-columns:1fr; } }
+  body { margin:0; font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--txt); line-height:1.65; font-size:16px; }
+  a { color:inherit; text-decoration:none; }
+  .page { max-width:1180px; margin:0 auto; padding:0 32px; display:grid; grid-template-columns:5fr 7fr; gap:64px; }
+
+  /* coluna fixa */
+  .side { position:sticky; top:0; height:100vh; padding:88px 0; display:flex; flex-direction:column; }
+  .side h1 { font-size:42px; line-height:1.1; margin:0; color:var(--title); letter-spacing:-.02em; }
+  .side .role { font-size:19px; font-weight:600; color:var(--title); margin:12px 0 0; }
+  .side .tagline { color:var(--muted); max-width:340px; margin:16px 0 0; }
+  .menu { list-style:none; padding:0; margin:56px 0 0; }
+  .menu a { display:flex; align-items:center; gap:14px; padding:8px 0; font-size:13px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
+  .menu a::before { content:""; width:32px; height:1px; background:currentColor; transition:width .2s; }
+  .menu a:hover, .menu a.ativo { color:var(--title); }
+  .menu a:hover::before, .menu a.ativo::before { width:64px; }
+  .social { margin-top:auto; display:flex; gap:20px; font-size:15px; font-weight:500; }
+  .social a { color:var(--muted); } .social a:hover { color:var(--title); }
+
+  /* conteúdo */
+  main { padding:88px 0; }
+  section { margin-bottom:96px; scroll-margin-top:88px; }
+  .label { display:none; font-size:13px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--title); margin:0 0 20px; }
+  section > p { margin:0 0 16px; }
+  strong { color:var(--title); font-weight:600; }
+  .inline { color:var(--title); font-weight:500; border-bottom:1px solid var(--muted); }
+  .inline:hover { color:var(--link); border-color:var(--link); }
+
+  .item { display:block; padding:20px 24px; margin:0 -24px 12px; border-radius:14px; transition:background .15s; }
+  .item:hover { background:var(--hover); }
+  .item .top { font-size:13px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:var(--muted); margin-bottom:4px; }
+  .item h3 { margin:0; font-size:18px; color:var(--title); line-height:1.35; }
+  .item h3 .seta { display:inline-block; transition:transform .15s; margin-left:4px; }
+  .item:hover h3 { color:var(--link); }
+  .item:hover h3 .seta { transform:translate(3px,-3px); }
+  .item p { margin:8px 0 0; font-size:15px; }
+  .pills { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+  .pill { background:var(--pill); color:var(--pill-txt); border-radius:999px; padding:4px 12px; font-size:13px; font-weight:600; }
+  .extra { display:flex; gap:18px; margin-top:12px; font-size:14px; font-weight:600; }
+  .extra a { color:var(--muted); } .extra a:hover { color:var(--link); }
+  .item.small h3 { font-size:16px; }
+
+  .stack { display:grid; grid-template-columns:repeat(2,1fr); gap:24px 32px; }
+  .stack h3 { margin:0 0 6px; font-size:15px; color:var(--title); }
+  .stack p { margin:0; font-size:15px; color:var(--muted); }
+  footer { font-size:14px; color:var(--muted); padding-bottom:48px; }
+
+  @media (max-width:900px) {
+    .page { grid-template-columns:1fr; gap:0; padding:0 22px; }
+    .side { position:static; height:auto; padding:56px 0 24px; }
+    .menu { display:none; }
+    .social { margin-top:24px; }
+    main { padding:24px 0; }
+    .label { display:block; }
+    section { margin-bottom:64px; }
+    .item { margin:0 -14px 8px; padding:16px 14px; }
+    .stack { grid-template-columns:1fr; }
+  }
 </style>
 </head>
 <body>
-<nav>
-  <div class="wrap">
-    <span class="logo">João Vitor</span>
-    <span class="links"><a href="#projetos">Projetos</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a></span>
-  </div>
-</nav>
-
-<header>
-  <div class="wrap">
-    <span class="eyebrow">Engenharia de Computação · UTFPR</span>
+<div class="page">
+  <header class="side">
     <h1>João Vitor Angelim Nogueira</h1>
-    <p class="lead">Desenvolvedor back-end em formação. Construo APIs em Node.js/TypeScript, Go e Python, com banco relacional, testes automatizados, Docker e CI, e gosto de entender como o sistema se comporta quando algo dá errado.</p>
-    <div class="btns">
-      <a class="btn primary" href="#projetos">Ver projetos</a>
-      <a class="arrow" href="https://www.linkedin.com/in/vitorangn/">LinkedIn</a>
-      <a class="arrow" href="https://github.com/VitorAngN">GitHub</a>
+    <p class="role">Desenvolvedor Back-end</p>
+    <p class="tagline">Estudante de Engenharia de Computação na UTFPR. Construo APIs testadas, com banco relacional, Docker e CI.</p>
+    <nav>
+      <ul class="menu">
+        <li><a href="#sobre" class="ativo">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#stack">Stack</a></li>
+      </ul>
+    </nav>
+    <div class="social">
+      <a href="https://github.com/VitorAngN">GitHub</a>
+      <a href="https://www.linkedin.com/in/vitorangn/">LinkedIn</a>
+      <a href="mailto:victornogueira1130@gmail.com">E-mail</a>
     </div>
-  </div>
-</header>
+  </header>
 
-<section id="projetos">
-  <div class="wrap">
-    <h2>Projetos principais</h2>
-    <div class="projects">
-      <article class="project">
-        <div class="body">
-          <span class="meta">Node.js · TypeScript · MySQL</span>
-          <h3>Helpdesk Corporativo</h3>
-          <p>Sistema de chamados com três perfis, chat em tempo real e indicadores de SLA/CSAT. Controle de acesso por perfil e por dono do recurso, 49 testes automatizados, Docker e CI.</p>
-          <div class="actions"><a class="btn primary" href="https://vitorangn.github.io/helpdesk-system/">Ver projeto</a><a class="arrow" href="https://vitorangn.github.io/helpdesk-system/api/">API</a><a class="arrow" href="https://github.com/VitorAngN/helpdesk-system">Código</a></div>
-        </div>
-      </article>
-      <article class="project">
-        
-        <div class="body">
-          <span class="meta">Go · PostgreSQL · Microsserviços</span>
-          <h3>Faturamento em Microsserviços</h3>
-          <p>Estoque e faturamento conversando por HTTP: baixa atômica, idempotência, retry com backoff e impressão à prova de clique duplo, com teste ponta a ponta em PostgreSQL no CI.</p>
-          <div class="actions"><a class="btn primary" href="https://vitorangn.github.io/invoice-microservices-go/">Ver projeto</a><a class="arrow" href="https://vitorangn.github.io/invoice-microservices-go/api/">API</a><a class="arrow" href="https://github.com/VitorAngN/invoice-microservices-go">Código</a></div>
-        </div>
-      </article>
-      <article class="project">
-        
-        <div class="body">
-          <span class="meta">Python · FastAPI · GraphQL</span>
-          <h3>Gestão de Clientes + Pipefy</h3>
-          <p>API desenvolvida em teste técnico: cadastro de clientes, cards no Pipefy via GraphQL e webhooks idempotentes, com 24 testes e CI em duas versões do Python.</p>
-          <div class="actions"><a class="btn primary" href="https://vitorangn.github.io/mundo-invest-backend-pipefy/">Ver projeto</a><a class="arrow" href="https://vitorangn.github.io/mundo-invest-backend-pipefy/api/">API</a><a class="arrow" href="https://github.com/VitorAngN/mundo-invest-backend-pipefy">Código</a></div>
-        </div>
-      </article>
-    </div>
-    <div class="small">
-      <div class="card"><h3>Emulador CHIP-8 (C++)</h3><p>CPU emulada do zero com Win32 API, testes de opcodes e CI no Linux e no Windows. <a href="https://github.com/VitorAngN/oldCPUEmulator">Código</a></p></div>
-      <div class="card"><h3>JobOps</h3><p>Gerenciador de candidaturas em Node.js, React e PostgreSQL, com métricas, follow-ups e exportação. <a href="https://github.com/VitorAngN/jobops">Código</a></p></div>
-    </div>
-  </div>
-</section>
+  <main>
+    <section id="sobre">
+      <h2 class="label">Sobre</h2>
+      <p>Sou do Ceará e estudo <strong>Engenharia de Computação na UTFPR</strong>, no Paraná. Antes da faculdade fiz o técnico em informática e trabalhei com suporte, o que me deixou com o hábito de olhar para o sistema rodando, e não só para o código.</p>
+      <p>Hoje meu foco é <strong>back-end</strong>: APIs em Node.js/TypeScript, Go e Python, banco relacional, testes automatizados, containers e pipelines de CI. Gosto principalmente dos problemas que aparecem quando várias coisas acontecem ao mesmo tempo: dois cliques na mesma ação, uma requisição repetida, um serviço fora do ar.</p>
+      <p>Estou buscando <strong>estágio em desenvolvimento back-end</strong>. Falo inglês avançado (C1) e espanhol intermediário (B1). Se quiser conversar, me chame pelo <a class="inline" href="https://www.linkedin.com/in/vitorangn/">LinkedIn</a> ou por <a class="inline" href="mailto:victornogueira1130@gmail.com">e-mail</a>.</p>
+    </section>
 
-<section>
-  <div class="wrap">
-    <h2>Stack</h2>
-    <div class="grid">
-      <div class="card"><h3>Back-end</h3><p>Node.js, TypeScript, Express, Go, Python (FastAPI), Java. APIs REST, autenticação JWT, regras de negócio e integração entre serviços.</p></div>
-      <div class="card"><h3>Banco de dados</h3><p>PostgreSQL, MySQL, SQLite, Prisma, GORM e SQLAlchemy. Modelagem relacional, transações e controle de concorrência.</p></div>
-      <div class="card"><h3>Qualidade e entrega</h3><p>Testes automatizados (Vitest, Go test, Pytest), Docker e Docker Compose, GitHub Actions, Linux e deploy em AWS EC2.</p></div>
-      <div class="card"><h3>Base</h3><p>C/C++, estruturas de dados, redes e sistemas operacionais. Interesse por entender o que acontece abaixo do framework.</p></div>
-    </div>
-  </div>
-</section>
+    <section id="projetos">
+      <h2 class="label">Projetos</h2>
 
-<section id="sobre">
-  <div class="wrap about">
-    <h2>Sobre</h2>
-    <div>
-      <p>Sou do Ceará e estudo Engenharia de Computação na UTFPR, no Paraná. Também sou Técnico em Informática e já trabalhei com suporte técnico, o que me deixou com o hábito de olhar para o sistema rodando, e não só para o código.</p>
-      <p>Hoje meu foco é back-end: APIs bem testadas, banco relacional, containers e CI. Busco estágio em desenvolvimento back-end. Inglês avançado (C1) e espanhol intermediário (B1).</p>
-    </div>
-  </div>
-</section>
+      <a class="item" href="https://vitorangn.github.io/helpdesk-system/">
+        <div class="top">Node.js · TypeScript · MySQL</div>
+        <h3>Helpdesk Corporativo <span class="seta">↗</span></h3>
+        <p>Sistema de chamados com três perfis, chat em tempo real e indicadores de SLA e CSAT. Controle de acesso por perfil e por dono do recurso, 49 testes automatizados e teste ponta a ponta com MySQL real.</p>
+        <div class="pills"><span class="pill">Express</span><span class="pill">Prisma</span><span class="pill">Socket.io</span><span class="pill">JWT</span><span class="pill">Docker</span></div>
+      </a>
 
-<section id="contato">
-  <div class="wrap">
-    <h2>Contato</h2>
-    <p class="lead">Aberto a estágio em desenvolvimento back-end. Respondo rápido por e-mail ou LinkedIn.</p>
-    <div class="btns">
-      <a class="btn primary" href="mailto:victornogueira1130@gmail.com">Enviar e-mail</a>
-      <a class="arrow" href="https://www.linkedin.com/in/vitorangn/">LinkedIn</a>
-      <a class="arrow" href="https://github.com/VitorAngN">GitHub</a>
-    </div>
-  </div>
-</section>
+      <a class="item" href="https://vitorangn.github.io/invoice-microservices-go/">
+        <div class="top">Go · PostgreSQL · Microsserviços</div>
+        <h3>Faturamento em Microsserviços <span class="seta">↗</span></h3>
+        <p>Estoque e faturamento conversando por HTTP, com baixa de estoque atômica, idempotência, retry com backoff e impressão à prova de clique duplo. Teste ponta a ponta com PostgreSQL a cada push.</p>
+        <div class="pills"><span class="pill">Go</span><span class="pill">Gin</span><span class="pill">GORM</span><span class="pill">PostgreSQL</span><span class="pill">Angular</span></div>
+      </a>
 
-<footer>
-  <div class="wrap">© 2026 João Vitor Angelim Nogueira</div>
-</footer>
+      <a class="item" href="https://vitorangn.github.io/mundo-invest-backend-pipefy/">
+        <div class="top">Python · FastAPI · Teste técnico</div>
+        <h3>Gestão de Clientes + Pipefy <span class="seta">↗</span></h3>
+        <p>API de cadastro de clientes que abre cards no Pipefy via GraphQL e processa webhooks com idempotência, com 24 testes e CI em duas versões do Python.</p>
+        <div class="pills"><span class="pill">FastAPI</span><span class="pill">SQLAlchemy</span><span class="pill">Pytest</span><span class="pill">GraphQL</span></div>
+      </a>
+
+      <a class="item small" href="https://github.com/VitorAngN/oldCPUEmulator">
+        <div class="top">C++ · Baixo nível</div>
+        <h3>Emulador CHIP-8 <span class="seta">↗</span></h3>
+        <p>CPU emulada do zero com Win32 API, testes de opcodes e CI no Linux e no Windows.</p>
+      </a>
+
+      <a class="item small" href="https://github.com/VitorAngN/jobops">
+        <div class="top">Node.js · React · PostgreSQL</div>
+        <h3>JobOps <span class="seta">↗</span></h3>
+        <p>Gerenciador de candidaturas com métricas, follow-ups e exportação.</p>
+      </a>
+    </section>
+
+    <section id="stack">
+      <h2 class="label">Stack</h2>
+      <div class="stack">
+        <div><h3>Back-end</h3><p>Node.js, TypeScript, Express, Go, Python (FastAPI), Java</p></div>
+        <div><h3>Banco de dados</h3><p>PostgreSQL, MySQL, SQLite, Prisma, GORM, SQLAlchemy</p></div>
+        <div><h3>Qualidade e entrega</h3><p>Vitest, Go test, Pytest, Docker, GitHub Actions, Linux, AWS EC2</p></div>
+        <div><h3>Base</h3><p>C/C++, estruturas de dados, redes e sistemas operacionais</p></div>
+      </div>
+    </section>
+
+    <footer>Feito à mão com HTML e CSS. Segue o tema claro ou escuro do seu sistema.</footer>
+  </main>
+</div>
+
+<script>
+  // destaca no menu a seção que está na tela
+  const links = document.querySelectorAll('.menu a');
+  const obs = new IntersectionObserver((entradas) => {
+    entradas.forEach((e) => {
+      if (e.isIntersecting) links.forEach((a) => a.classList.toggle('ativo', a.getAttribute('href') === '#' + e.target.id));
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  document.querySelectorAll('main section').forEach((s) => obs.observe(s));
+</script>
 </body>
 </html>
