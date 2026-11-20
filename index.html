@@ -1,164 +1,202 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>João Vitor Angelim Nogueira — Desenvolvedor Back-end</title>
-<meta name="description" content="Portfólio de João Vitor Angelim Nogueira: estudante de Engenharia de Computação (UTFPR) com foco em back-end e APIs.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>João Vitor — Desenvolvedor Back-end</title>
+<meta name="description" content="Portfólio de João Vitor Angelim Nogueira, estudante de Engenharia de Computação (UTFPR) com foco em back-end.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root { color-scheme: light dark; --bg:#ffffff; --hover:#f4f6f9; --txt:#334155; --title:#0f172a; --muted:#64748b; --acc:#1e3a5f; --link:#2563eb; --pill:#e8eef7; --pill-txt:#1e3a5f; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg:#0f1115; --hover:#181d26; --txt:#cbd5e1; --title:#f1f5f9; --muted:#94a3b8; --acc:#7aa7ff; --link:#7aa7ff; --pill:#1c2a40; --pill-txt:#a9c6ff; }
-  }
-  * { box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
-  body { margin:0; font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--txt); line-height:1.65; font-size:16px; }
-  a { color:inherit; text-decoration:none; }
-  .page { max-width:1180px; margin:0 auto; padding:0 32px; display:grid; grid-template-columns:5fr 7fr; gap:64px; }
+:root{color-scheme:light dark;--bg:#ffffff;--ink:#0a0a0a;--txt:#262626;--muted:#6b6b6b;--red:#e11d2e;--card:#ffffff;--soft:#f3f3f3;--inv:#ffffff;--dots:rgba(10,10,10,.07)}
+@media (prefers-color-scheme:dark){:root{--bg:#0b0b0c;--ink:#fafafa;--txt:#e5e5e5;--muted:#a3a3a3;--red:#ff2d40;--card:#131314;--soft:#1b1b1d;--inv:#0b0b0c;--dots:rgba(255,255,255,.06)}}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 Inter,system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px;position:relative}
 
-  /* coluna fixa */
-  .side { position:sticky; top:0; height:100vh; padding:88px 0; display:flex; flex-direction:column; }
-  .side h1 { font-size:42px; line-height:1.1; margin:0; color:var(--title); letter-spacing:-.02em; }
-  .side .role { font-size:19px; font-weight:600; color:var(--title); margin:12px 0 0; }
-  .side .tagline { color:var(--muted); max-width:340px; margin:16px 0 0; }
-  .menu { list-style:none; padding:0; margin:56px 0 0; }
-  .menu a { display:flex; align-items:center; gap:14px; padding:8px 0; font-size:13px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
-  .menu a::before { content:""; width:32px; height:1px; background:currentColor; transition:width .2s; }
-  .menu a:hover, .menu a.ativo { color:var(--title); }
-  .menu a:hover::before, .menu a.ativo::before { width:64px; }
-  .social { margin-top:auto; display:flex; gap:20px; font-size:15px; font-weight:500; }
-  .social a { color:var(--muted); } .social a:hover { color:var(--title); }
+/* ---------- fundo que acompanha a rolagem ---------- */
+.fundo{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.pontos{position:absolute;inset:-200px;background-image:radial-gradient(var(--dots) 1.6px,transparent 1.7px);background-size:18px 18px;will-change:transform}
+.caco{position:absolute;will-change:transform}
+.caco.c1{right:-8vw;top:6vh;width:46vw;height:78vh;background:var(--red);clip-path:polygon(22% 0,100% 0,78% 100%,0 100%)}
+.caco.c2{right:34vw;top:84vh;width:14vw;height:44vh;background:var(--ink);clip-path:polygon(40% 0,100% 0,60% 100%,0 100%)}
+.caco.c3{left:-6vw;top:120vh;width:30vw;height:60vh;background:var(--red);clip-path:polygon(0 10%,100% 0,85% 100%,0 90%);opacity:.9}
+.caco.c4{right:-4vw;top:190vh;width:22vw;height:70vh;background:var(--ink);clip-path:polygon(30% 0,100% 0,70% 100%,0 100%);opacity:.9}
+.caco.c5{left:8vw;top:260vh;width:10vw;height:40vh;background:var(--red);clip-path:polygon(50% 0,100% 0,50% 100%,0 100%)}
+.estrela{position:absolute;width:90px;height:90px;background:var(--ink);clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);will-change:transform}
+.estrela.e1{right:12vw;top:70vh} .estrela.e2{left:4vw;top:180vh;width:60px;height:60px;background:var(--red)}
 
-  /* conteúdo */
-  main { padding:88px 0; }
-  section { margin-bottom:96px; scroll-margin-top:88px; }
-  .label { display:none; font-size:13px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--title); margin:0 0 20px; }
-  section > p { margin:0 0 16px; }
-  strong { color:var(--title); font-weight:600; }
-  .inline { color:var(--title); font-weight:500; border-bottom:1px solid var(--muted); }
-  .inline:hover { color:var(--link); border-color:var(--link); }
+/* barra de progresso */
+.progresso{position:fixed;top:0;left:0;height:6px;width:100%;background:var(--red);transform-origin:left;transform:scaleX(0);z-index:50}
 
-  .item { display:block; padding:20px 24px; margin:0 -24px 12px; border-radius:14px; transition:background .15s; }
-  .item:hover { background:var(--hover); }
-  .item .top { font-size:13px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:var(--muted); margin-bottom:4px; }
-  .item h3 { margin:0; font-size:18px; color:var(--title); line-height:1.35; }
-  .item h3 .seta { display:inline-block; transition:transform .15s; margin-left:4px; }
-  .item:hover h3 { color:var(--link); }
-  .item:hover h3 .seta { transform:translate(3px,-3px); }
-  .item p { margin:8px 0 0; font-size:15px; }
-  .pills { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
-  .pill { background:var(--pill); color:var(--pill-txt); border-radius:999px; padding:4px 12px; font-size:13px; font-weight:600; }
-  .extra { display:flex; gap:18px; margin-top:12px; font-size:14px; font-weight:600; }
-  .extra a { color:var(--muted); } .extra a:hover { color:var(--link); }
-  .item.small h3 { font-size:16px; }
+/* ---------- topo ---------- */
+nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0}
+.logo{font-family:Anton,sans-serif;font-size:24px;background:var(--ink);color:var(--inv);padding:2px 14px;transform:skew(-10deg);display:inline-block}
+nav .links a{margin-left:22px;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.1em}
+nav .links a:hover{color:var(--red)}
 
-  .stack { display:grid; grid-template-columns:repeat(2,1fr); gap:24px 32px; }
-  .stack h3 { margin:0 0 6px; font-size:15px; color:var(--title); }
-  .stack p { margin:0; font-size:15px; color:var(--muted); }
+.hero{min-height:calc(100vh - 90px);display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:20px;padding-bottom:40px}
+.kicker{display:inline-block;background:var(--ink);color:var(--inv);font-weight:800;font-size:13px;letter-spacing:.18em;text-transform:uppercase;padding:6px 14px;transform:skew(-12deg)}
+h1{font-family:Anton,sans-serif;font-weight:400;font-size:clamp(60px,10vw,132px);line-height:.9;text-transform:uppercase;color:var(--ink);margin:22px 0 22px;padding-top:.12em}
+h1 .l{display:block;opacity:0;transform:translateX(-40px) skew(-8deg);animation:entra .7s cubic-bezier(.2,.8,.2,1) forwards}
+h1 .l:nth-child(2){animation-delay:.12s;color:var(--red)}
+@keyframes entra{to{opacity:1;transform:none}}
+.lead{max-width:500px;font-size:18px;font-weight:500;opacity:0;animation:entra .7s .3s forwards}
 
-  @media (max-width:900px) {
-    .page { grid-template-columns:1fr; gap:0; padding:0 22px; }
-    .side { position:static; height:auto; padding:56px 0 24px; }
-    .menu { display:none; }
-    .social { margin-top:24px; }
-    main { padding:24px 0; }
-    .label { display:block; }
-    section { margin-bottom:64px; }
-    .item { margin:0 -14px 8px; padding:16px 14px; }
-    .stack { grid-template-columns:1fr; }
-  }
-</style>
-</head>
-<body>
-<div class="page">
-  <header class="side">
-    <h1>João Vitor Angelim Nogueira</h1>
-    <p class="role">Desenvolvedor Back-end</p>
-    <p class="tagline">Estudante de Engenharia de Computação na UTFPR. Construo APIs testadas, com banco relacional, Docker e CI.</p>
-    <nav>
-      <ul class="menu">
-        <li><a href="#sobre" class="ativo">Sobre</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#stack">Stack</a></li>
-      </ul>
-    </nav>
-    <div class="social">
-      <a href="https://github.com/VitorAngN">GitHub</a>
-      <a href="https://www.linkedin.com/in/vitorangn/">LinkedIn</a>
-      <a href="mailto:victornogueira1130@gmail.com">E-mail</a>
-    </div>
-  </header>
+/* menu estilo jogo */
+.menu{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.menu li{opacity:0;animation:entra .5s forwards}
+.menu li:nth-child(1){animation-delay:.35s;margin-left:0} .menu li:nth-child(2){animation-delay:.45s;margin-left:28px}
+.menu li:nth-child(3){animation-delay:.55s;margin-left:56px} .menu li:nth-child(4){animation-delay:.65s;margin-left:84px}
+.menu a{position:relative;display:inline-block;font-family:Anton,sans-serif;font-size:clamp(34px,4.4vw,54px);line-height:1.1;text-transform:uppercase;color:var(--ink);padding:2px 18px;transform:rotate(-4deg);transition:transform .18s,color .18s;isolation:isolate}
+.menu a>span.papel{position:absolute;inset:4px -6px;background:var(--bg);transform:skew(-14deg);z-index:-3;box-shadow:4px 4px 0 var(--ink)}
+.menu a::before{content:"";position:absolute;inset:4px -6px;background:var(--ink);transform:skew(-14deg) scaleX(0);transform-origin:left;transition:transform .2s cubic-bezier(.2,.8,.2,1);z-index:-1}
+.menu a::after{content:"";position:absolute;inset:10px -14px 0 4px;background:var(--red);transform:skew(-14deg) scaleX(0);transform-origin:left;transition:transform .2s .04s cubic-bezier(.2,.8,.2,1);z-index:-2}
+.menu a:hover,.menu a:focus-visible{color:var(--inv);transform:rotate(-4deg) translateX(14px) scale(1.06);outline:none}
+.menu a:hover::before,.menu a:focus-visible::before,.menu a:hover::after,.menu a:focus-visible::after{transform:skew(-14deg) scaleX(1)}
+.menu small{font-family:Inter,sans-serif;font-size:13px;font-weight:800;letter-spacing:.12em;vertical-align:middle;margin-left:10px;color:var(--red)}
+.menu a:hover small{color:var(--inv)}
 
-  <main>
-    <section id="sobre">
-      <h2 class="label">Sobre</h2>
-      <p>Sou do Ceará e estudo <strong>Engenharia de Computação na UTFPR</strong>, no Paraná. Antes da faculdade fiz o técnico em informática e trabalhei com suporte, o que me deixou com o hábito de olhar para o sistema rodando, e não só para o código.</p>
-      <p>Hoje meu foco é <strong>back-end</strong>: APIs em Node.js/TypeScript, Go e Python, banco relacional, testes automatizados, containers e pipelines de CI. Gosto principalmente dos problemas que aparecem quando várias coisas acontecem ao mesmo tempo: dois cliques na mesma ação, uma requisição repetida, um serviço fora do ar.</p>
-      <p>Estou buscando <strong>estágio em desenvolvimento back-end</strong>. Falo inglês avançado (C1) e espanhol intermediário (B1). Se quiser conversar, me chame pelo <a class="inline" href="https://www.linkedin.com/in/vitorangn/">LinkedIn</a> ou por <a class="inline" href="mailto:victornogueira1130@gmail.com">e-mail</a>.</p>
-    </section>
+/* ---------- seções ---------- */
+section{padding:80px 0}
+h2{font-family:Anton,sans-serif;font-weight:400;font-size:clamp(46px,6vw,72px);line-height:1;text-transform:uppercase;color:var(--ink);margin:0 0 36px;display:inline-block;position:relative}
+h2::after{content:"";position:absolute;left:-10px;right:-18px;bottom:6px;height:22px;background:var(--red);z-index:-1;transform:skew(-14deg) scaleX(0);transform-origin:left;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+h2.visivel::after{transform:skew(-14deg) scaleX(1)}
 
-    <section id="projetos">
-      <h2 class="label">Projetos</h2>
+.revelar{opacity:0;transform:translateY(40px) skewY(2deg);transition:opacity .6s,transform .6s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0) * 90ms)}
+.revelar.visivel{opacity:1;transform:none}
 
-      <a class="item" href="https://vitorangn.github.io/helpdesk-system/">
-        <div class="top">Node.js · TypeScript · MySQL</div>
-        <h3>Helpdesk Corporativo <span class="seta">↗</span></h3>
-        <p>Sistema de chamados com demo testável no navegador, três perfis, chat em tempo real e indicadores de SLA e CSAT. Controle de acesso por perfil e por dono do recurso, 49 testes automatizados e teste ponta a ponta com MySQL real.</p>
-        <div class="pills"><span class="pill">Express</span><span class="pill">Prisma</span><span class="pill">Socket.io</span><span class="pill">JWT</span><span class="pill">Docker</span></div>
+.projs{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.proj{position:relative;display:flex;gap:18px;background:var(--card);border:2px solid var(--ink);border-radius:16px;padding:26px 26px 26px 22px;overflow:hidden}
+.proj::before{content:"";position:absolute;inset:0;background:var(--ink);clip-path:polygon(0 0,0 0,0 100%,0 100%);transition:clip-path .35s cubic-bezier(.2,.8,.2,1);z-index:0}
+.proj>*{position:relative;z-index:1}
+.proj:hover{transform:translate(-4px,-4px);box-shadow:8px 8px 0 var(--red)}
+.proj.visivel{transition:opacity .6s,transform .18s,box-shadow .18s}
+.proj:hover::before{clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+.proj:hover h3,.proj:hover p{color:var(--inv)} .proj:hover .meta{color:var(--red)}
+.proj:hover .tags span{background:var(--red);color:#fff}
+.num{font-family:Anton,sans-serif;font-size:44px;line-height:1;color:var(--red)}
+.meta{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.proj h3{margin:4px 0 6px;font-size:22px;color:var(--ink);font-weight:800;transition:color .2s}
+.proj p{margin:0 0 14px;font-size:15px;transition:color .2s}
+.tags{display:flex;flex-wrap:wrap;gap:6px} .tags span{font-size:12px;font-weight:700;background:var(--soft);padding:3px 10px;border-radius:999px;transition:background .2s,color .2s}
+.ir{position:absolute!important;right:22px;bottom:16px;font-size:26px;font-weight:800;color:var(--red);transform:translateX(-10px);opacity:0;transition:.2s}
+.proj:hover .ir{transform:none;opacity:1}
+
+.sobre{display:grid;grid-template-columns:1fr 1.6fr;gap:48px;align-items:start}
+.texto{background:var(--card);border:2px solid var(--ink);border-radius:16px;padding:28px 30px;box-shadow:8px 8px 0 var(--red)}
+.sobre p{margin:0 0 16px;font-size:17px} .sobre p:last-child{margin:0} strong{color:var(--ink)}
+.citacao{padding:10px 0;font-family:Anton,sans-serif;font-size:clamp(34px,4vw,48px);line-height:1.05;text-transform:uppercase;color:var(--ink);position:sticky;top:60px}
+.citacao span{display:inline-block;background:var(--red);color:#fff;padding:0 10px;transform:skew(-10deg);margin:4px 0}
+
+.stack{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.st{background:var(--card);border:2px solid var(--ink);border-radius:16px;padding:20px}
+.st h4{margin:0 0 6px;color:var(--ink);text-transform:uppercase;font-size:14px;letter-spacing:.08em} .st p{margin:0;font-size:14px;color:var(--muted)}
+
+.contato{background:var(--ink);color:var(--inv);border-radius:24px;padding:64px 48px;margin:40px 0 96px;position:relative;overflow:hidden}
+.contato>*{position:relative;z-index:1}
+.contato h2{color:var(--inv)} .contato p{max-width:460px;opacity:.85;margin:0 0 30px;font-size:17px}
+.contato::after{content:"";position:absolute;right:-60px;top:-40px;width:300px;height:380px;background:var(--red);clip-path:polygon(30% 0,100% 0,70% 100%,0 100%)}
+.acoes{display:flex;gap:16px;flex-wrap:wrap;position:relative;z-index:1}
+.btn{display:inline-block;padding:14px 28px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:14px;transform:skew(-10deg);border:2px solid var(--inv);transition:transform .15s,box-shadow .15s}
+.btn>span{display:inline-block;transform:skew(10deg)}
+.btn.p{background:var(--red);border-color:var(--red);color:#fff}
+.btn:hover{transform:skew(-10deg) translate(-3px,-3px);box-shadow:6px 6px 0 var(--inv)}
+
+@media(max-width:860px){
+  .hero{grid-template-columns:1fr;min-height:auto;padding:30px 0 40px}
+  .menu{margin-top:20px} .projs,.sobre{grid-template-columns:1fr} .stack{grid-template-columns:1fr 1fr}
+  .citacao{position:static} nav .links{display:none}
+  .caco{width:16vw!important;opacity:1}
+  .caco.c1{right:-6vw;left:auto;top:4vh;height:60vh} .caco.c2{right:-4vw;left:auto;top:90vh}
+  .caco.c3{left:-8vw;right:auto} .caco.c4{right:-6vw;left:auto} .caco.c5{left:-6vw}
+  .estrela{display:none} .lead{background:var(--bg)}
+  .contato{padding:44px 26px} .contato::after{width:120px;height:260px;right:-50px}
+  .menu a{font-size:34px}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important} h1 .l,.lead,.menu li,.revelar{opacity:1;transform:none}}
+</style></head><body>
+
+<div class="fundo" aria-hidden="true">
+  <div class="pontos" data-vel="-0.15"></div>
+  <div class="caco c1" data-vel="-0.35"></div>
+  <div class="caco c2" data-vel="-0.6"></div>
+  <div class="caco c3" data-vel="-0.45"></div>
+  <div class="caco c4" data-vel="-0.7"></div>
+  <div class="caco c5" data-vel="-0.9"></div>
+  <div class="estrela e1" data-vel="-0.5" data-giro="0.08"></div>
+  <div class="estrela e2" data-vel="-0.8" data-giro="-0.12"></div>
+</div>
+<div class="progresso" id="progresso"></div>
+
+<div class="wrap">
+<nav><span class="logo">J.VITOR</span><div class="links"><a href="https://github.com/VitorAngN">GitHub</a><a href="https://www.linkedin.com/in/vitorangn/">LinkedIn</a></div></nav>
+
+<header class="hero">
+  <div>
+    <span class="kicker">Back-end · UTFPR</span>
+    <h1><span class="l">João Vitor</span><span class="l">Nogueira</span></h1>
+    <p class="lead">Desenvolvedor back-end atrás do primeiro estágio. APIs testadas, banco relacional, Docker e CI.</p>
+  </div>
+  <ul class="menu">
+    <li><a href="#projetos"><span class="papel"></span>Projetos<small>04</small></a></li>
+    <li><a href="#sobre"><span class="papel"></span>Sobre</a></li>
+    <li><a href="#stack"><span class="papel"></span>Stack</a></li>
+    <li><a href="#contato"><span class="papel"></span>Contato</a></li>
+  </ul>
+</header>
+
+<section id="projetos"><h2 class="titulo">Projetos</h2><div class="projs">
+      <a class="proj revelar" href="https://vitorangn.github.io/helpdesk-system/" style="--i:0">
+        <span class="num">01</span>
+        <div class="corpo"><span class="meta">Node.js · TypeScript · MySQL</span><h3>Helpdesk Corporativo</h3><p>Sistema de chamados com três perfis, chat em tempo real e indicadores de SLA e CSAT. Tem demo para testar no navegador.</p>
+        <div class="tags"><span>Express</span><span>Prisma</span><span>Socket.io</span><span>JWT</span><span>Docker</span></div></div>
+        <span class="ir">→</span>
       </a>
-
-      <a class="item" href="https://vitorangn.github.io/invoice-microservices-go/">
-        <div class="top">Go · PostgreSQL · Microsserviços</div>
-        <h3>Faturamento em Microsserviços <span class="seta">↗</span></h3>
-        <p>Estoque e faturamento conversando por HTTP, com baixa de estoque atômica, idempotência, retry com backoff e impressão à prova de clique duplo. Teste ponta a ponta com PostgreSQL a cada push.</p>
-        <div class="pills"><span class="pill">Go</span><span class="pill">Gin</span><span class="pill">GORM</span><span class="pill">PostgreSQL</span><span class="pill">Angular</span></div>
+      <a class="proj revelar" href="https://vitorangn.github.io/invoice-microservices-go/" style="--i:1">
+        <span class="num">02</span>
+        <div class="corpo"><span class="meta">Go · PostgreSQL</span><h3>Faturamento em Microsserviços</h3><p>Estoque e faturamento conversando por HTTP, com baixa de estoque atômica, idempotência e retry com backoff.</p>
+        <div class="tags"><span>Go</span><span>Gin</span><span>GORM</span><span>PostgreSQL</span><span>Angular</span></div></div>
+        <span class="ir">→</span>
       </a>
-
-      <a class="item" href="https://vitorangn.github.io/mundo-invest-backend-pipefy/">
-        <div class="top">Python · FastAPI · Teste técnico</div>
-        <h3>Gestão de Clientes + Pipefy <span class="seta">↗</span></h3>
-        <p>API de cadastro de clientes que abre cards no Pipefy via GraphQL e processa webhooks com idempotência, com 24 testes e CI em duas versões do Python.</p>
-        <div class="pills"><span class="pill">FastAPI</span><span class="pill">SQLAlchemy</span><span class="pill">Pytest</span><span class="pill">GraphQL</span></div>
+      <a class="proj revelar" href="https://vitorangn.github.io/mundo-invest-backend-pipefy/" style="--i:2">
+        <span class="num">03</span>
+        <div class="corpo"><span class="meta">Python · FastAPI</span><h3>Gestão de Clientes + Pipefy</h3><p>API que abre cards no Pipefy via GraphQL e processa webhooks com idempotência. 24 testes e CI.</p>
+        <div class="tags"><span>FastAPI</span><span>SQLAlchemy</span><span>Pytest</span><span>GraphQL</span></div></div>
+        <span class="ir">→</span>
       </a>
-
-      <a class="item small" href="https://vitorangn.github.io/oldCPUEmulator/">
-        <div class="top">C++ · WebAssembly</div>
-        <h3>Emulador CHIP-8 <span class="seta">↗</span></h3>
-        <p>CPU emulada do zero em C++, compilada para WebAssembly: dá para jogar Pong e Tetris no navegador.</p>
-      </a>
-
-      <a class="item small" href="https://github.com/VitorAngN/jobops">
-        <div class="top">Node.js · React · PostgreSQL</div>
-        <h3>JobOps <span class="seta">↗</span></h3>
-        <p>Gerenciador de candidaturas com métricas, follow-ups e exportação.</p>
-      </a>
-    </section>
-
-    <section id="stack">
-      <h2 class="label">Stack</h2>
-      <div class="stack">
-        <div><h3>Back-end</h3><p>Node.js, TypeScript, Express, Go, Python (FastAPI), Java</p></div>
-        <div><h3>Banco de dados</h3><p>PostgreSQL, MySQL, SQLite, Prisma, GORM, SQLAlchemy</p></div>
-        <div><h3>Qualidade e entrega</h3><p>Vitest, Go test, Pytest, Docker, GitHub Actions, Linux, AWS EC2</p></div>
-        <div><h3>Base</h3><p>C/C++, estruturas de dados, redes e sistemas operacionais</p></div>
-      </div>
-    </section>
-
-  </main>
+      <a class="proj revelar" href="https://vitorangn.github.io/oldCPUEmulator/" style="--i:3">
+        <span class="num">04</span>
+        <div class="corpo"><span class="meta">C++ · WebAssembly</span><h3>Emulador CHIP-8</h3><p>CPU dos anos 70 emulada do zero e compilada para WebAssembly. Dá para jogar Pong e Tetris no navegador.</p>
+        <div class="tags"><span>C++</span><span>WebAssembly</span><span>CMake</span></div></div>
+        <span class="ir">→</span>
+      </a></div></section>
+<section id="sobre"><h2 class="titulo">Sobre</h2><div class="sobre"><div class="citacao revelar">Morre,<br><span>aprende,</span><br>tenta de novo.</div><div class="texto revelar" style="--i:1"><p>Sou do Ceará e estudo <strong>Engenharia de Computação na UTFPR</strong>, no Paraná. Antes da faculdade fiz o técnico em informática e trabalhei com suporte, o que me deixou com o hábito de olhar para o sistema rodando, e não só para o código.</p><p>Hoje meu foco é <strong>back-end</strong>: APIs em Node.js/TypeScript, Go e Python, banco relacional, testes, containers e CI. Gosto dos problemas que aparecem quando muita coisa acontece ao mesmo tempo: dois cliques na mesma ação, uma requisição repetida, um serviço fora do ar.</p><p>Fora do código, sou aquele que morre 40 vezes no mesmo chefe e volta na 41ª. Levo esse jeito para os bugs também.</p></div></div></section>
+<section id="stack"><h2 class="titulo">Stack</h2><div class="stack"><div class="st revelar" style="--i:0"><h4>Back-end</h4><p>Node.js, TypeScript, Express, Go, Python, Java</p></div><div class="st revelar" style="--i:1"><h4>Dados</h4><p>PostgreSQL, MySQL, Prisma, GORM, SQLAlchemy</p></div><div class="st revelar" style="--i:2"><h4>Entrega</h4><p>Docker, GitHub Actions, Linux, AWS EC2, testes automatizados</p></div><div class="st revelar" style="--i:3"><h4>Base</h4><p>C/C++, estruturas de dados, redes, sistemas operacionais</p></div></div></section>
+<div class="contato revelar" id="contato"><h2 class="titulo visivel">Bora conversar?</h2><p>Se você tem uma vaga de estágio em back-end, eu quero ouvir.</p>
+<div class="acoes"><a class="btn p" href="mailto:victornogueira1130@gmail.com"><span>Enviar e-mail</span></a><a class="btn" href="https://www.linkedin.com/in/vitorangn/"><span>LinkedIn</span></a></div></div>
 </div>
 
 <script>
-  // destaca no menu a seção que está na tela
-  const links = document.querySelectorAll('.menu a');
-  const obs = new IntersectionObserver((entradas) => {
-    entradas.forEach((e) => {
-      if (e.isIntersecting) links.forEach((a) => a.classList.toggle('ativo', a.getAttribute('href') === '#' + e.target.id));
+  // Fundo em camadas: cada peça desce numa velocidade diferente (parallax) e a barra mostra o progresso.
+  const pecas = [...document.querySelectorAll('[data-vel]')];
+  const barra = document.getElementById('progresso');
+  const reduzir = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let pendente = false;
+  function atualizar() {
+    const y = scrollY;
+    const max = document.documentElement.scrollHeight - innerHeight;
+    barra.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
+    if (!reduzir) pecas.forEach((p) => {
+      const giro = p.dataset.giro ? ` rotate(${y * p.dataset.giro}deg)` : '';
+      p.style.transform = `translate3d(0, ${y * p.dataset.vel}px, 0)${giro}`;
     });
-  }, { rootMargin: '-40% 0px -55% 0px' });
-  document.querySelectorAll('main section').forEach((s) => obs.observe(s));
+    pendente = false;
+  }
+  addEventListener('scroll', () => { if (!pendente) { pendente = true; requestAnimationFrame(atualizar); } }, { passive: true });
+  atualizar();
+
+  // Elementos entram quando aparecem na tela.
+  const obs = new IntersectionObserver((itens) => itens.forEach((e) => {
+    if (e.isIntersecting) { e.target.classList.add('visivel'); obs.unobserve(e.target); }
+  }), { threshold: 0.15 });
+  document.querySelectorAll('.revelar, .titulo').forEach((el) => obs.observe(el));
 </script>
-</body>
-</html>
+</body></html>
